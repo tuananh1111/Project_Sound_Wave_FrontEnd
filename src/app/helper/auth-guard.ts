@@ -13,6 +13,7 @@ import {AuthService} from '../service/auth/auth.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate, CanActivateChild {
+  // @ts-ignore
   currentUser: UserToken;
 
   constructor(private router: Router,

@@ -11,6 +11,7 @@ import {first} from 'rxjs/operators';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  // @ts-ignore
   currentUser: UserToken;
   user: User = {
     username: '',

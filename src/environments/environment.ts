@@ -4,6 +4,16 @@
 
 export const environment = {
   production: false,
+  firebaseConfig : {
+    apiKey: 'AIzaSyAaF7cyqh4DoWEU2TkDXnUeFe0Le10uH6A',
+    authDomain: 'sound-wave-9d45d.firebaseapp.com',
+    databaseURL: 'https://sound-wave-9d45d-default-rtdb.firebaseio.com/',
+    projectId: 'sound-wave-9d45d',
+    storageBucket: 'sound-wave-9d45d.appspot.com',
+    messagingSenderId: '368542689977',
+    appId: '1:368542689977:web:2f10c095d4d791959b8968',
+    measurementId: 'G-XKDW7R2CS7'
+  },
   apiUrl: 'http://localhost:8080'
 };
 
