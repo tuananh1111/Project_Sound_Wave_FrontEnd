@@ -1,0 +1,19 @@
+<form [formGroup]="formRegister" (ngSubmit)="register()">
+  <table>
+    <tr>
+      <td>Username</td>
+      <td><input type="text" formControlName="username" ></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td><input type="text" formControlName="password"></td>
+    </tr>
+    <tr>
+      <td>Phone Number</td>
+      <td><input type="number" formControlName="phoneNumber"></td>
+    </tr>
+    <tr>
+      <td><button type="submit">Đăng ký</button></td>
+    </tr>
+  </table>
+</form>
