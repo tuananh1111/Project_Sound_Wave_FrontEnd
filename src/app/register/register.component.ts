@@ -12,6 +12,7 @@ import {User} from '../model/user';
 export class RegisterComponent implements OnInit {
   // @ts-ignore
   formRegister: FormGroup;
+  // @ts-ignore
   user: User;
 
   constructor(private serviceAuth: AuthService,

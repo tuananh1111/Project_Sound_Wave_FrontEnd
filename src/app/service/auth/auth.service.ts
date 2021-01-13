@@ -7,7 +7,8 @@ import {map} from 'rxjs/operators';
 import {User} from '../../model/user';
 
 
-const API_URL = `${environment.apiUrl}`;
+// const API_URL = `${environment.apiUrl}`;
+const API_URL = 'http://localhost:8080';
 
 @Injectable({
   providedIn: 'root'
