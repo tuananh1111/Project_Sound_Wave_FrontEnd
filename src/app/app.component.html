@@ -1,4 +1,23 @@
+<style>
+  .rotate {
+    animation: rotation 8s infinite linear;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+    margin-top: -50px;
+    margin-left: 10px;
+  }
 
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+</style>
 
 <nav class="navbar navbar-expand-lg navbar-dark " style="position: fixed;width: 100%; background: rgba(0,0,0,0.5);z-index: 9">
   <a class="navbar-brand" href="#"><img src="assets/img/logo.png" alt="" height="50px" ></a>
@@ -37,13 +56,14 @@
 </nav>
 
 <router-outlet></router-outlet>
-
-  <audio style=" width: 100%; position: fixed;bottom: 0;right: 0; z-index: 9" controls>
+<div style="width:100%;height: 100px ; position: fixed;bottom: 0;right: 0; z-index: 9; background-color: #f1f3f4">
+  <img class="rotate" src="https://i.ytimg.com/vi/2wGdDKA3IF8/maxresdefault.jpg">
+  <audio style=" width: 50%; margin-left: 20%;margin-top: 25px" controls>
     <source src="horse.ogg" type="audio/ogg">
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-
+</div>
 <footer class="card-footer" style="width: 100%;height: 200px; position: absolute;overflow: hidden;background-color: beige">
   <h1>Footer Content</h1>
 
