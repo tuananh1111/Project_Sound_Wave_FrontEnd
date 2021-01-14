@@ -5,6 +5,7 @@ import {AuthGuard} from './helper/auth-guard';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {CreateNewSongComponent} from './component/song/create-new-song/create-new-song.component';
+import {ListSongComponent} from "./component/song/list-song/list-song.component";
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
   {
     path: 'songs/create',
     component: CreateNewSongComponent
+  },
+  {
+    path: 'songs',
+    component: ListSongComponent
+
   }
 ];
 
