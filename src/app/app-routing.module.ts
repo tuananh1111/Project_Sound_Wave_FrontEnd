@@ -4,6 +4,7 @@ import {HostComponent} from './host/host.component';
 import {AuthGuard} from './helper/auth-guard';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
+import {CreateNewSongComponent} from './component/song/create-new-song/create-new-song.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'songs/create',
+    component: CreateNewSongComponent
   }
 ];
 
