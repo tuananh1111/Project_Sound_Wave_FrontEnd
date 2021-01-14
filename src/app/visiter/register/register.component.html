@@ -1,0 +1,98 @@
+<div class="wrapper">
+  <div style="height: 730px">
+
+    <div class="container">
+      <div class="row" style="">
+        <div class="col-lg-4 col-sm-6 mr-auto ml-auto"
+             style="margin-top: 100px;padding: 30px;background-color: white;border-radius: 20px">
+          <div class="card card-register" style="border-color: white">
+            <h3 class="title">Welcome</h3>
+            <div class="social-line text-center">
+              <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
+                <i class="fa fa-facebook-square"></i>
+              </a>
+              <a href="#pablo" class="btn btn-neutral btn-google btn-just-icon">
+                <i class="fa fa-google-plus"></i>
+              </a>
+              <a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </div>
+
+            <form style="border-color: white" [formGroup]="formRegister" (ngSubmit)="register()">
+              <label for="validationCustom03">Username</label>
+              <div class="input-group form-group-no-border">
+                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-badge"></i>
+                                  </span>
+                </div>
+
+                <input type="text" class="form-control" formControlName="username" placeholder="Username"
+                       id="validationCustom02" required>
+                <div class="invalid-feedback">
+                  Please enter your username.
+                </div>
+              </div>
+
+              <label for="validationCustom03">Password</label>
+              <div class="input-group form-group-no-border"
+              >
+                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-key-25"></i>
+                                  </span>
+                </div>
+                <input type="password" class="form-control" formControlName="password" placeholder="Password"
+                       id="validationCustom03" required>
+                <div class="invalid-feedback">
+                  Please enter your password.
+                </div>
+              </div>
+
+<!--              <label for="validationCustom04">Re-enter Password</label>-->
+<!--              <div class="input-group form-group-no-border">-->
+<!--                <div class="input-group-prepend">-->
+<!--                                                <span class="input-group-text">-->
+<!--                                                    <i class="nc-icon nc-key-25"></i>-->
+<!--                                                </span>-->
+<!--                </div>-->
+<!--                <input type="password" class="form-control" placeholder="Re-Password" id="validationCustom04" required>-->
+<!--                <div class="invalid-feedback">-->
+<!--                  Please re-enter your password.-->
+<!--                </div>-->
+<!--              </div>-->
+
+              <label for="validationCustom05">Phone Number</label>
+              <div class="input-group form-group-no-border">
+                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-mobile"></i>
+                                  </span>
+                </div>
+                <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Phone"
+                       id="validationCustom05" required>
+                <div class="invalid-feedback">
+                  Please provide your phone number.
+                </div>
+              </div>
+
+              <div style="margin-top: 10px" class="form-group">
+                <input class="form-uncheck-input" type="checkbox" value="" id="invalidCheck" required>
+                <span for="invalidCheck">
+                                    I understand and agree to <a style="color: #014c8c" [routerLink]="['/term-of-service']">Term Of Service</a>
+                                </span>
+                <span class="invalid-feedback">You must agree before sign up.</span>
+              </div>
+
+              <button class="btn btn-danger btn-block btn-round" type="submit">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 30px" class="footer register-footer text-center">
+        <h6>&copy;Made with 3000 <i class="fa fa-heart heart"></i> by Avengers</h6>
+      </div>
+    </div>
+  </div>
+</div>

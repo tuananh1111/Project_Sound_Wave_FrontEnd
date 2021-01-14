@@ -2,8 +2,9 @@ import { NgModule} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HostComponent} from './host/host.component';
 import {AuthGuard} from './helper/auth-guard';
-import {LoginComponent} from './login/login.component';
-import {RegisterComponent} from './register/register.component';
+import {LoginComponent} from './visiter/login/login.component';
+import {RegisterComponent} from './visiter/register/register.component';
+import {UpdateComponent} from './client/song/update/update.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'song/:id',
+    component: UpdateComponent
   }
 ];
 
