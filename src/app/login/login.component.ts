@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../service/auth/auth.service';
 import {UserToken} from '../model/user-token';
-import {User} from '../model/user';
+import {IUser} from '../model/IUser';
 import {first} from 'rxjs/operators';
 
 @Component({
@@ -13,7 +13,7 @@ import {first} from 'rxjs/operators';
 export class LoginComponent implements OnInit {
   // @ts-ignore
   currentUser: UserToken;
-  user: User = {
+  user: IUser = {
     username: '',
     password: ''
   };
