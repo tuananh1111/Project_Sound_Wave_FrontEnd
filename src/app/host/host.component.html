@@ -1,1 +1,42 @@
 <h2>Trang chu</h2>
+<p>User Current</p>
+<table border="1" cellpadding="10">
+  <tr>
+    <td>ID</td>
+    <td>{{currentUser.id}}</td>
+  </tr>
+  <tr>
+    <td>Username</td>
+    <td>{{currentUser.username}}</td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td>{{currentUser.password}}</td>
+  </tr>
+  <tr>
+    <td>Full Name</td>
+    <td>{{currentUser.fullName}}</td>
+  </tr>
+  <tr>
+    <td>Token</td>
+    <td>{{currentUser.token}}</td>
+  </tr>
+</table>
+<hr>
+
+<p>User</p>
+<table border="1" cellpadding="10">
+  <tr>
+    <td>ID</td>
+    <td>{{user.id}}</td>
+  </tr>
+  <tr>
+    <td>Username</td>
+    <td>{{user.username}}</td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td>{{user.password}}</td>
+  </tr>
+</table>
+<button [routerLink]="['/resetpassword']">Reset Password</button>

@@ -7,8 +7,7 @@ import {map} from 'rxjs/operators';
 import {User} from '../../model/user';
 
 
-// const API_URL = `${environment.apiUrl}`;
-const API_URL = 'http://localhost:8080';
+const API_URL = `${environment.apiUrl}`;
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +31,7 @@ export class AuthService {
     return this.http.post(API_URL + '/login', {username, password})
       .pipe(map(user => {
         localStorage.setItem('user', JSON.stringify(user));
-        this.currentUserSubject.next(user);
+        this.currentUserSubject.next(user as UserToken);
         this.update.emit('login');
         return user;
       }));
