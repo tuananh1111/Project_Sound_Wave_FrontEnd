@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl || '/host';
   }
-
   // tslint:disable-next-line:typedef
   login() {
     // @ts-ignore

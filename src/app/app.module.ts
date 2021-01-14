@@ -10,13 +10,15 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {JwtInterceptor} from './helper/jwt-interceptor';
 import {ErrorInterceptor} from './helper/error-interceptor';
 import { HostComponent } from './host/host.component';
+import { SongComponent } from './component/song/song.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HostComponent
+    HostComponent,
+    SongComponent
   ],
   imports: [
     BrowserModule,
