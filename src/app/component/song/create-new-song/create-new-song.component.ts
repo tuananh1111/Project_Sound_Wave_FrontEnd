@@ -16,7 +16,8 @@ import {CategoryService} from "../../../service/category/category.service";
 import {ICategory} from "../../../model/category/ICategory";
 import {IAlbum} from "../../../model/album/IAlbum";
 import {AlbumService} from "../../../service/album/album.service";
-
+declare var $: any;
+declare var Swal: any;
 @Component({
   selector: 'app-create-new-song',
   templateUrl: './create-new-song.component.html',
@@ -71,7 +72,42 @@ export class CreateNewSongComponent implements OnInit {
   });
   // tslint:disable-next-line:typedef
     ngOnInit() {
-
+      // $(document).ready(function () {
+      //   $('#register').validate({
+      //     rules: {
+      //       name: {
+      //         required: true,
+      //         minlength: 3
+      //       },
+      //       description: {
+      //         required: false,
+      //       },
+      //       musician: {
+      //         required: true
+      //       },
+      //     },
+      //     messages: {
+      //       name: {
+      //         required: "Vui lòng nhập username",
+      //         minlength: "tối thiểu 3 kí tự"
+      //       },
+      //       description: {
+      //         required: ""
+      //       },
+      //     },
+      //     errorElement: 'span',
+      //     errorPlacement: function (error, element) {
+      //       error.addClass('invalid-feedback');
+      //       element.closest('.input-group').append(error);
+      //     },
+      //     highlight: function (element, errorClass, validClass) {
+      //       $(element).addClass('is-invalid');
+      //     },
+      //     unhighlight: function (element, errorClass, validClass) {
+      //       $(element).removeClass('is-invalid');
+      //     }
+      //   });
+      // });
   }
   // @ts-ignore
   saveUrlMp3(event) {

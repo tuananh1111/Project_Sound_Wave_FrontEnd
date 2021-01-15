@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AuthService} from '../service/auth/auth.service';
-import {UserToken} from '../model/user-token';
-import {IUser} from '../model/IUser';
+import {AuthService} from '../../service/auth/auth.service';
+import {UserToken} from '../../model/user-token';
 import {first} from 'rxjs/operators';
+import {IUser} from '../../model/IUser';
 
 @Component({
   selector: 'app-login',
