@@ -12,6 +12,10 @@ import {IUser} from "../../../model/IUser";
 import {SongService} from "../../../service/song/song.service";
 import {SingerService} from "../../../service/singer/singer.service";
 import {ISinger} from "../../../model/singer/ISinger";
+import {CategoryService} from "../../../service/category/category.service";
+import {ICategory} from "../../../model/category/ICategory";
+import {IAlbum} from "../../../model/album/IAlbum";
+import {AlbumService} from "../../../service/album/album.service";
 
 @Component({
   selector: 'app-create-new-song',
@@ -37,6 +41,10 @@ export class CreateNewSongComponent implements OnInit {
   // @ts-ignore
   downloadURL: Observable<string>;
   singers: ISinger[] = [];
+  categories: ICategory[] = [];
+  albums: IAlbum[] = [];
+  failMessage = '';
+
   constructor(
     private storage: AngularFireStorage,
     private fbd: FormBuilder,
@@ -44,9 +52,13 @@ export class CreateNewSongComponent implements OnInit {
     private authService: AuthService,
     private userService: UserService,
     private songService: SongService,
-    private singerService: SingerService
+    private singerService: SingerService,
+    private categoryService: CategoryService,
+    private albumService: AlbumService
   ) {
     this.getAllSinger();
+    this.getAllCategory();
+    this.getAllAlbum();
   }
   songForm: FormGroup = this.fbd.group({
     name: new FormControl('', [Validators.required]),
@@ -54,6 +66,8 @@ export class CreateNewSongComponent implements OnInit {
     musician: new FormControl('', Validators.required),
     views: new FormControl('', Validators.required),
     singer: new FormControl('', Validators.required),
+    category:  new FormControl('', Validators.required),
+    album: new FormControl('', Validators.required),
   });
   // tslint:disable-next-line:typedef
     ngOnInit() {
@@ -111,10 +125,9 @@ export class CreateNewSongComponent implements OnInit {
   }
   async setNewSong() {
     let user = await this.getUserFromDB();
-
-    // @ts-ignore
     let singer: ISinger = await this.getSinger();
-
+    let category: ICategory = await this.getCategory();
+    let album: IAlbum = await  this.getOneAlbum();
     let song: ISong = {
       name: this.songForm.get('name')?.value,
       description: this.songForm.get('description')?.value,
@@ -126,9 +139,14 @@ export class CreateNewSongComponent implements OnInit {
     if(user != null){
       song.user = user;
     }
-    // @ts-ignore
     if (singer != null){
       song.singer = singer;
+    }
+    if (category != null){
+      song.singer = category;
+    }
+    if (album != null){
+      song.album = album;
     }
     return song;
   }
@@ -153,9 +171,26 @@ export class CreateNewSongComponent implements OnInit {
         this.singers = value;
       })
   }
-  // @ts-ignore
   getSinger() {
     let singer_id = +this.songForm.get('singer')?.value;
     return  this.singerService.getOneSinger(singer_id).toPromise();
+  }
+  // @ts-ignore
+  getAllCategory(): ICategory[] {
+      this.categoryService.getAllCategory().subscribe(value => this.categories = value);
+  }
+  getCategory() {
+      let category_id = +this.songForm.get('category')?.value;
+    return  this.categoryService.getCategory(category_id).toPromise();
+  }
+  // @ts-ignore
+  getAllAlbum(): IAlbum[] {
+    this.albumService.getAllAlbum().subscribe(value => this.albums = value);
+  }
+
+  getOneAlbum(): IAlbum {
+      let album_id = +this.songForm.get('album')?.value;
+      // @ts-ignore
+    return  this.albumService.getOneAlbum(album_id).toPromise();
   }
 }
