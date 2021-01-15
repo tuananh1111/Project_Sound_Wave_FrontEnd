@@ -3,18 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {LoginComponent} from './login/login.component';
-import {RegisterComponent} from './register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {JwtInterceptor} from './helper/jwt-interceptor';
 import {ErrorInterceptor} from './helper/error-interceptor';
 import { HostComponent } from './host/host.component';
-import {AngularFireStorageModule} from '@angular/fire/storage';
-import {AngularFireModule} from '@angular/fire';
-import {environment} from '../environments/environment';
-import { CreateNewSongComponent } from './component/song/create-new-song/create-new-song.component';
+import {CreateNewSongComponent} from "./component/song/create-new-song/create-new-song.component";
 import {ListSongComponent} from "./component/song/list-song/list-song.component";
+import {AngularFireStorageModule} from "@angular/fire/storage";
+import {AngularFireModule} from "@angular/fire";
+import {environment} from "../environments/environment";
+import {LoginComponent} from "./visiter/login/login.component";
+import {RegisterComponent} from "./visiter/register/register.component";
 
 @NgModule({
   declarations: [
