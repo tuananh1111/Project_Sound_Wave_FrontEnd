@@ -3,6 +3,7 @@ import {AuthService} from "../service/auth/auth.service";
 import {UserService} from "../service/user/user.service";
 import {IUser} from "../model/IUser";
 import {UserToken} from "../model/user-token";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-host',
@@ -17,7 +18,8 @@ export class HostComponent implements OnInit {
   userCurrent: UserToken;
   constructor(
     private authService: AuthService,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +27,11 @@ export class HostComponent implements OnInit {
       this.userCurrent = value;
       this.userService.getUserByUsername(value.username).subscribe(value1 => {
         this.user = value1;
-      })
+      });
     });
+  }
+  logout(){
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }
