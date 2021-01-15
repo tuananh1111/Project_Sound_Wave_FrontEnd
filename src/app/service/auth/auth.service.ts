@@ -6,7 +6,6 @@ import {environment} from '../../../environments/environment';
 import {map} from 'rxjs/operators';
 import {User} from '../../model/user';
 
-
 const API_URL = `${environment.apiUrl}`;
 
 @Injectable({
@@ -27,6 +26,7 @@ export class AuthService {
     return this.currentUserSubject.value;
   }
 
+  // tslint:disable-next-line:typedef
   login(username: string, password: string) {
     return this.http.post(API_URL + '/login', {username, password})
       .pipe(map(user => {
@@ -45,6 +45,7 @@ export class AuthService {
     return this.http.get(API_URL + '/register/check');
   }
 
+  // tslint:disable-next-line:typedef
   logout() {
     localStorage.removeItem('user');
     // @ts-ignore

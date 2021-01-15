@@ -2,6 +2,7 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
 import {UserToken} from './model/user-token';
 import {UserService} from './service/user/user.service';
 import {AuthService} from './service/auth/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import {AuthService} from './service/auth/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  titleFirst = 'Project-Sound-Wave-Front-End';
   // @ts-ignore
   user: Observable<any>;
   // @ts-ignore
@@ -16,7 +18,8 @@ export class AppComponent {
 
   constructor(
     private userService: UserService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {
   }
 
@@ -27,6 +30,11 @@ export class AppComponent {
         this.user = value1;
       });
     });
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/host']);
   }
 }
 

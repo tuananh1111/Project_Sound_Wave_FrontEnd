@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {User} from '../../model/user';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
