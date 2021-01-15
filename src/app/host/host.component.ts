@@ -31,7 +31,9 @@ export class HostComponent implements OnInit {
     });
   }
   logout(){
-    this.authService.logout();
-    this.router.navigate(['/login']);
+    if(confirm('Bạn có chắc chắn muốn thoát không?')){
+      this.authService.logout();
+      this.router.navigate(['/login']);
+    }
   }
 }

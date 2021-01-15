@@ -123,7 +123,7 @@ export class CreateNewSongComponent implements OnInit {
       musician: this.songForm.get('description')?.value,
       views: this.songForm.get('views')?.value,
     };
-    if(user != null){
+    if (user != null){
       song.user = user;
     }
     // @ts-ignore
@@ -139,7 +139,7 @@ export class CreateNewSongComponent implements OnInit {
       alert('them roi');
       // this.router.navigate(['songs']);
       console.log(this.urlMp3);
-    })
+    });
   }
 
   async getUserFromDB() {
@@ -151,7 +151,7 @@ export class CreateNewSongComponent implements OnInit {
   getAllSinger(): ISinger[] {
       this.singerService.getAllSinger().subscribe(value => {
         this.singers = value;
-      })
+      });
   }
   // @ts-ignore
   getSinger() {
