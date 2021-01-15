@@ -1,14 +1,14 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {UserToken} from './model/user-token';
-import {UserService} from './service/user/user.service';
-import {AuthService} from './service/auth/auth.service';
+import { Component, OnInit } from '@angular/core';
+import {UserToken} from '../../../model/user-token';
+import {UserService} from '../../../service/user/user.service';
+import {AuthService} from '../../../service/auth/auth.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class AppComponent {
+export class ProfileComponent implements OnInit {
   // @ts-ignore
   user: Observable<any>;
   // @ts-ignore
@@ -29,5 +29,3 @@ export class AppComponent {
     });
   }
 }
-
-

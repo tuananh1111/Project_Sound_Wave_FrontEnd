@@ -1,0 +1,59 @@
+<div class="wrapper">
+  <div style="height: 730px">
+
+    <div class="container">
+      <div class="row" style="">
+        <div class="col-lg-4 col-sm-6 mr-auto ml-auto"
+             style="margin-top: 100px;padding: 30px;background-color: white;border-radius: 20px">
+          <div class="card card-deck" style="border-color: white">
+            <form [formGroup]="editForm" (ngSubmit)="onSongUpdate()">
+              <div style="margin-left: 45%">
+                <label class="fileContainer" for="up_button">
+                <img style="object-fit: cover; width: 100px; height: 100px; border-radius: 50%" formControlName="avatar" [src]="song.avatar" alt="" class="main-profile-img" id="output"/>
+                </label>
+                <p hidden><input type="file" accept="image/*" id="up_button" onchange="loadFile(event)"
+                                 name="avatarFile"></p>
+              </div>
+              <div>
+                <label>name</label>
+                <input type="text" formControlName="name" id="name">
+              </div>
+              <div>
+                <label>description</label>
+                <input type="text" formControlName="description" id="description">
+              </div>
+              <div>
+                <label>musician</label>
+                <input type="text" formControlName="musician" id="musician">
+              </div>
+              <div>
+                <label>singer</label>
+                <input type="text" formControlName="singer" id="singer">
+              </div>
+              <div>
+                <label>album</label>
+                <input type="text" formControlName="album" id="album">
+              </div>
+              <div>
+                <label>category</label>
+                <input type="text" formControlName="category" id="category">
+              </div>
+
+              <button type="submit" class="btn-danger">Update</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var loadFile = function (event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function () {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>

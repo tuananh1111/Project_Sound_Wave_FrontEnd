@@ -1,26 +1,20 @@
-<!--<h1>Test</h1>-->
-<!--{{user.username}}-->
-<!--<form [formGroup]="resetPassForm" (ngSubmit)="resetPassword()">-->
-<!--  <table>-->
-<!--    <tr>-->
-<!--      <td>Old Password</td>-->
-<!--      <td>New Password</td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--      <td>-->
-<!--        <input type="text" formControlName="password" name="password" id="password">-->
-<!--      </td>-->
-<!--      <td>-->
-<!--        <input type="text" formControlName="newpassword" name="newpassword" id="newpassword">-->
-<!--      </td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--      <td>-->
-<!--        <button type="submit">Reset Password</button>-->
-<!--      </td>-->
-<!--    </tr>-->
-<!--  </table>-->
-<!--</form>-->
+<!-- <h1>Login Form</h1>-->
+<!--  <form (ngSubmit)="login()">-->
+<!--    <table>-->
+<!--      <tr>-->
+<!--        <td>Username</td>-->
+<!--        <td><input type="text" name="username" [(ngModel)]="user.username"></td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>Password</td>-->
+<!--        <td><input type="text" name="password" [(ngModel)]="user.password"></td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td></td>-->
+<!--        <td><button type="submit">Submit</button></td>-->
+<!--      </tr>-->
+<!--    </table>-->
+<!--  </form>-->
 
 
 <div class="wrapper">
@@ -31,7 +25,6 @@
              style="margin-top: 100px;padding: 30px;background-color: white;border-radius: 20px">
           <div class="card card-register" style="border-color: white">
             <h3 class="title">Welcome Back</h3>
-            {{user.username}}
             <div class="social-line text-center">
               <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
                 <i class="fa fa-facebook-square"></i>
@@ -43,8 +36,8 @@
                 <i class="fa fa-twitter"></i>
               </a>
             </div>
-            <form style="border-color: white" [formGroup]="resetPassForm" (ngSubmit)="resetPassword()">
-              <label for="validationCustom03">Old Password</label>
+            <form style="border-color: white" (ngSubmit)="login()">
+              <label for="validationCustom03">Username</label>
               <div class="input-group form-group-no-border">
                 <div class="input-group-prepend">
                                   <span class="input-group-text">
@@ -52,7 +45,8 @@
                                   </span>
                 </div>
 
-                <input type="text" class="form-control" id="validationCustom02" required formControlName="password" name="password" id="password">
+                <input type="text" class="form-control" placeholder="Username" name="username"
+                       id="validationCustom02" required [(ngModel)]="user.username">
                 <div class="invalid-feedback">
                   Please enter your username.
                 </div>
@@ -65,7 +59,8 @@
                                       <i class="nc-icon nc-key-25"></i>
                                   </span>
                 </div>
-                <input type="text" class="form-control"  id="validationCustom03" required formControlName="newpassword" name="newpassword" id="newpassword">
+                <input type="password" class="form-control" placeholder="Password" name="password"
+                       id="validationCustom03" required [(ngModel)]="user.password">
                 <div class="invalid-feedback">
                   Please enter your password.
                 </div>
@@ -77,7 +72,7 @@
                 <span><a style="color: #014c8c" href="">Forgot password?</a></span>
               </div>
 
-              <button class="btn btn-danger btn-block btn-round" type="submit">Reset Password</button>
+              <button class="btn btn-danger btn-block btn-round" type="submit">Log In</button>
               <a class="btn btn-outline-info btn-block btn-round" [routerLink]="['/register']">Sign In</a>
             </form>
           </div>
@@ -89,4 +84,3 @@
     </div>
   </div>
 </div>
-

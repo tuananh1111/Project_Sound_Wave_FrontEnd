@@ -25,6 +25,10 @@ export class UserService {
     return this.http.get(API_URL + `/users/${username}`);
   }
 
+  updateUser(user: User): Observable<any> {
+    return this.http.put(API_URL + `/users/update`, user);
+  }
+
   checkPassword(user: User): Observable<any> {
     return this.http.post(API_URL + `/users/resetpassword`, user);
   }
