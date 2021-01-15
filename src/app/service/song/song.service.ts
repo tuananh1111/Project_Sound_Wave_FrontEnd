@@ -1,20 +1,25 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../environments/environment';
 import {Observable} from 'rxjs';
-import {Song} from '../../model/song';
+import {ISong} from '../../model/song/ISong';
+import {environment} from "../../../environments/environment";
 
-const API_URL = `${environment.apiUrl}`;
+
+const URL_API = `${environment.apiUrl}`;
+
 @Injectable({
   providedIn: 'root'
 })
-
 export class SongService {
-  constructor(private http: HttpClient) { }
-  getAll(): Observable<any>{
-    return this.http.get<Song>(API_URL + '/songs');
+
+  constructor(private httpClient: HttpClient) {
   }
-  createSong(song: Song): Observable<any> {
-    return this.http.post<Song>(API_URL + '/songs', song);
+
+  getAllSong(): Observable<ISong[]> {
+    return this.httpClient.get<any>(URL_API + '/songs');
+  }
+
+  createSong(song: ISong): Observable<any> {
+    return this.httpClient.post<ISong>(URL_API + '/songs' , song);
   }
 }

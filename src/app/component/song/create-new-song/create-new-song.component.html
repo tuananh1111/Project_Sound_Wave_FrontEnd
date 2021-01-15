@@ -1,0 +1,59 @@
+
+<div class="container-fluid">
+  <h1 align="center">Create new song</h1>
+  <div class="col-md-6 offset-md-3">
+    <button class="btn btn-success" [routerLink]="'/'">songs list</button>
+    <form [formGroup]="songForm" (ngSubmit)="save()" >
+      <div class="form-group">
+        <label>name</label>
+        <input type="email" formControlName="name" class="form-control" id="exampleInputUsername" aria-describedby="emailHelp" placeholder="Enter name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">description</label>
+        <textarea cols="30" rows="10" formControlName="description" class="form-control"  placeholder="Desc"></textarea>
+      </div>
+      <div class="form-group">
+        <label>file nhac</label>
+        <input  type="file"
+               id="file"
+               #userPhoto
+               (change)="saveUrlMp3($event)"
+               name="image"
+               autocomplete="off"
+        />
+      </div>
+      <div class="form-group">
+        <label>file nhac</label>
+        <input  type="file"
+                id="fileAvatar"
+                #userPhoto
+                (change)="saveAvatar($event)"
+                name="image"
+                autocomplete="off"
+        />
+      </div>
+      <div class="form-group">
+        <label>singer</label>
+        <select class="form-control" formControlName="singer" >
+          <option *ngFor="let s of singers" [value]="s.id">
+            {{s.name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">musician</label>
+        <textarea cols="30" rows="10" formControlName="musician" class="form-control" placeholder="Desc"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">view</label>
+        <input type="number" value="0" formControlName="views" class="form-control" id="exampleInputPassword1" placeholder="Desc">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+<div class="form-group col-12">
+
+
+</div>
