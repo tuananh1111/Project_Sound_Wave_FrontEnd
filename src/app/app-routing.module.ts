@@ -4,8 +4,9 @@ import {HostComponent} from './host/host.component';
 import {AuthGuard} from './helper/auth-guard';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
-import {CreateNewSongComponent} from './component/song/create-new-song/create-new-song.component';
-import {ListSongComponent} from "./component/song/list-song/list-song.component";
+import {ListSongComponent} from './component/song/list-song/list-song.component';
+import {CreateSongComponent} from './component/song/create-song/create-song.component';
+
 
 const routes: Routes = [
   {
@@ -23,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: 'songs/create',
-    component: CreateNewSongComponent
+    component: CreateSongComponent
   },
   {
     path: 'songs',

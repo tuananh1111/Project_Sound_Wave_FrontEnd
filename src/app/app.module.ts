@@ -13,8 +13,8 @@ import { HostComponent } from './host/host.component';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
-import { CreateNewSongComponent } from './component/song/create-new-song/create-new-song.component';
-import {ListSongComponent} from "./component/song/list-song/list-song.component";
+import {CreateSongComponent} from './component/song/create-song/create-song.component';
+import {ListSongComponent} from './component/song/list-song/list-song.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import {ListSongComponent} from "./component/song/list-song/list-song.component"
     LoginComponent,
     RegisterComponent,
     HostComponent,
-    CreateNewSongComponent,
+    CreateSongComponent,
     ListSongComponent
   ],
   imports: [
