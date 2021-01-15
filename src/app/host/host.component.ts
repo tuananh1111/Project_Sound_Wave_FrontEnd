@@ -11,7 +11,7 @@ import {UserService} from '../service/user/user.service';
 })
 export class HostComponent implements OnInit {
   // @ts-ignore
-  user: User;
+  user: Observable<any>;
   // @ts-ignore
   currentUser: UserToken;
 
@@ -22,13 +22,10 @@ export class HostComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.authService.currentUser.subscribe(value => {
       this.currentUser = value;
-      console.log(value);
       this.userService.getUserByUsername(value.username).subscribe(value1 => {
         this.user = value1;
-        console.log(value1);
       });
     });
   }
