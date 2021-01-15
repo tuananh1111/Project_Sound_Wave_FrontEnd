@@ -29,15 +29,15 @@
                 </div>
 
                 <input type="text" class="form-control" formControlName="username" placeholder="Username"
-                       id="validationCustom02" required>
-                <div class="invalid-feedback">
-                  Please enter your username.
-                </div>
+                       id="username" name="username" required>
+              </div>
+              <div class="alert alert-danger mt-1" role="alert"
+                   *ngIf="formRegister.get('username').invalid && formRegister.get('username').touched">
+                <span>Name is required.</span>
               </div>
 
               <label for="validationCustom03">Password</label>
-              <div class="input-group form-group-no-border"
-              >
+              <div class="input-group form-group-no-border">
                 <div class="input-group-prepend">
                                   <span class="input-group-text">
                                       <i class="nc-icon nc-key-25"></i>
@@ -45,23 +45,25 @@
                 </div>
                 <input type="password" class="form-control" formControlName="password" placeholder="Password"
                        id="validationCustom03" required>
-                <div class="invalid-feedback">
-                  Please enter your password.
-                </div>
+              </div>
+              <div class="alert alert-danger mt-1" role="alert"
+                   *ngIf="formRegister.get('password').invalid && formRegister.get('password').touched">
+                <span>Password is required.</span>
               </div>
 
-<!--              <label for="validationCustom04">Re-enter Password</label>-->
-<!--              <div class="input-group form-group-no-border">-->
-<!--                <div class="input-group-prepend">-->
-<!--                                                <span class="input-group-text">-->
-<!--                                                    <i class="nc-icon nc-key-25"></i>-->
-<!--                                                </span>-->
-<!--                </div>-->
-<!--                <input type="password" class="form-control" placeholder="Re-Password" id="validationCustom04" required>-->
-<!--                <div class="invalid-feedback">-->
-<!--                  Please re-enter your password.-->
-<!--                </div>-->
-<!--              </div>-->
+              <label for="validationCustom04">Confirm Password</label>
+              <div class="input-group form-group-no-border">
+                <div class="input-group-prepend">
+                                                              <span class="input-group-text">
+                                                                  <i class="nc-icon nc-key-25"></i>
+                                                              </span>
+                </div>
+                <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Re-Password" id="validationCustom04" required>
+              </div>
+              <div class="alert alert-danger mt-1" role="alert"
+                   *ngIf="formRegister.get('confirmPassword').invalid && formRegister.get('confirmPassword').touched">
+                <span>Confirm password is required.</span>
+              </div>
 
               <label for="validationCustom05">Phone Number</label>
               <div class="input-group form-group-no-border">
@@ -72,27 +74,46 @@
                 </div>
                 <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Phone"
                        id="validationCustom05" required>
-                <div class="invalid-feedback">
-                  Please provide your phone number.
-                </div>
+              </div>
+              <div class="alert alert-danger mt-1" role="alert"
+                   *ngIf="formRegister.get('phoneNumber').invalid && formRegister.get('phoneNumber').touched">
+                <span>Phone's number is required.</span>
               </div>
 
               <div style="margin-top: 10px" class="form-group">
-                <input class="form-uncheck-input" type="checkbox" value="" id="invalidCheck" required>
+                <input class="form-uncheck-input" formControlName="check"  type="checkbox" value="" id="check" required>
                 <span for="invalidCheck">
-                                    I understand and agree to <a style="color: #014c8c" [routerLink]="['/term-of-service']">Term Of Service</a>
+                                    I understand and agree to <a style="color: #014c8c"
+                                                                 [routerLink]="['/term-of-service']">Term Of Service</a>
                                 </span>
-                <span class="invalid-feedback">You must agree before sign up.</span>
+              </div>
+              <div class="alert alert-danger mt-1" role="alert"
+                   *ngIf="formRegister.get('check').invalid && formRegister.get('check').touched">
+                <span>You must agree to continue.</span>
               </div>
 
-              <button class="btn btn-danger btn-block btn-round" type="submit">Sign Up</button>
+
+              <button class="btn btn-danger btn-block btn-round" id="submitButton" disabled="disabled" type="submit">Sign Up</button>
             </form>
           </div>
         </div>
       </div>
-      <div style="margin-top: 30px" class="footer register-footer text-center">
+      <div style="margin-top: 10px" class="footer register-footer text-center">
         <h6>&copy;Made with 3000 <i class="fa fa-heart heart"></i> by Avengers</h6>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  var checker = document.getElementById('check');
+  var sendbtn = document.getElementById('submitButton');
+  // when unchecked or checked, run the function
+  checker.onchange = function(){
+    if(this.checked){
+      sendbtn.disabled = false;
+    } else {
+      sendbtn.disabled = true;
+    }
+  }
+</script>
