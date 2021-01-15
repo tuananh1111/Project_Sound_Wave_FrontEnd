@@ -5,6 +5,7 @@ import {AuthGuard} from './helper/auth-guard';
 import {LoginComponent} from './visiter/login/login.component';
 import {RegisterComponent} from './visiter/register/register.component';
 import {UpdateComponent} from './client/song/update/update.component';
+import {ProfileComponent} from './client/user/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'song/:id',
     component: UpdateComponent
+  },
+  {
+    path: 'user/:id',
+    component: ProfileComponent
   }
 ];
 
