@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ISong} from '../../../interface/i-song';
+import {ISong} from '../../../../model/i-song';
 import {FormGroup, FormBuilder} from '@angular/forms';
-import {SongService} from '../../../service/song/song.service';
+import {SongService} from '../../../../service/song/song.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({

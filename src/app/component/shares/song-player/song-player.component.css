@@ -1,0 +1,31 @@
+.rotate {
+  animation: rotation 8s infinite linear;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 80px;
+  height: 80px;
+  margin-top: -50px;
+  margin-left: 10px;
+}
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-panel {
+  background-color: #17a2b8;
+  color: #17a2b8;
+}
+
+#audioTag{
+  background-color: #17a2b8;
+  border:#17a2b8;
+  border-top: 1px white;
+  border-style: solid;
+}
+
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

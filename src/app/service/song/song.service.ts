@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {ISong} from '../../interface/i-song';
+import {ISong} from '../../model/i-song';
 import {Observable} from 'rxjs';
 
 @Injectable({

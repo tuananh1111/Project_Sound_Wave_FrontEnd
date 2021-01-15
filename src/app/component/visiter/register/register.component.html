@@ -20,7 +20,7 @@
             </div>
 
             <form style="border-color: white" [formGroup]="formRegister" (ngSubmit)="register()">
-              <label for="validationCustom03">Username</label>
+              <label >Username</label>
               <div class="input-group form-group-no-border">
                 <div class="input-group-prepend">
                                   <span class="input-group-text">
@@ -29,14 +29,14 @@
                 </div>
 
                 <input type="text" class="form-control" formControlName="username" placeholder="Username"
-                       id="username" name="username" required>
+                        required>
               </div>
               <div class="alert alert-danger mt-1" role="alert"
-                   *ngIf="formRegister.get('username').invalid && formRegister.get('username').touched">
+                   *ngIf="formRegister.get('username')!.invalid && formRegister.get('username')!.touched">
                 <span>Name is required.</span>
               </div>
 
-              <label for="validationCustom03">Password</label>
+              <label >Password</label>
               <div class="input-group form-group-no-border">
                 <div class="input-group-prepend">
                                   <span class="input-group-text">
@@ -44,28 +44,28 @@
                                   </span>
                 </div>
                 <input type="password" class="form-control" formControlName="password" placeholder="Password"
-                       id="validationCustom03" required>
+                        required>
               </div>
               <div class="alert alert-danger mt-1" role="alert"
-                   *ngIf="formRegister.get('password').invalid && formRegister.get('password').touched">
+                   *ngIf="formRegister.get('password')!.invalid && formRegister.get('password')!.touched">
                 <span>Password is required.</span>
               </div>
 
-              <label for="validationCustom04">Confirm Password</label>
+              <label >Confirm Password</label>
               <div class="input-group form-group-no-border">
                 <div class="input-group-prepend">
                                                               <span class="input-group-text">
                                                                   <i class="nc-icon nc-key-25"></i>
                                                               </span>
                 </div>
-                <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Re-Password" id="validationCustom04" required>
+                <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Re-Password"  required>
               </div>
               <div class="alert alert-danger mt-1" role="alert"
-                   *ngIf="formRegister.get('confirmPassword').invalid && formRegister.get('confirmPassword').touched">
+                   *ngIf="formRegister.get('confirmPassword')!.invalid && formRegister.get('confirmPassword')!.touched">
                 <span>Confirm password is required.</span>
               </div>
 
-              <label for="validationCustom05">Phone Number</label>
+              <label >Phone Number</label>
               <div class="input-group form-group-no-border">
                 <div class="input-group-prepend">
                                   <span class="input-group-text">
@@ -73,10 +73,10 @@
                                   </span>
                 </div>
                 <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Phone"
-                       id="validationCustom05" required>
+                        required>
               </div>
               <div class="alert alert-danger mt-1" role="alert"
-                   *ngIf="formRegister.get('phoneNumber').invalid && formRegister.get('phoneNumber').touched">
+                   *ngIf="formRegister.get('phoneNumber')!.invalid && formRegister.get('phoneNumber')!.touched">
                 <span>Phone's number is required.</span>
               </div>
 
@@ -88,7 +88,7 @@
                                 </span>
               </div>
               <div class="alert alert-danger mt-1" role="alert"
-                   *ngIf="formRegister.get('check').invalid && formRegister.get('check').touched">
+                   *ngIf="formRegister.get('check')!.invalid && formRegister.get('check')!.touched">
                 <span>You must agree to continue.</span>
               </div>
 
@@ -105,15 +105,4 @@
   </div>
 </div>
 
-<script>
-  var checker = document.getElementById('check');
-  var sendbtn = document.getElementById('submitButton');
-  // when unchecked or checked, run the function
-  checker.onchange = function(){
-    if(this.checked){
-      sendbtn.disabled = false;
-    } else {
-      sendbtn.disabled = true;
-    }
-  }
-</script>
+

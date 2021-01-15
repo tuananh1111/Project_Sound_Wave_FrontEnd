@@ -3,15 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {LoginComponent} from './visiter/login/login.component';
-import {RegisterComponent} from './visiter/register/register.component';
+import {LoginComponent} from './component/visiter/login/login.component';
+import {RegisterComponent} from './component/visiter/register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {JwtInterceptor} from './helper/jwt-interceptor';
 import {ErrorInterceptor} from './helper/error-interceptor';
 import { HostComponent } from './host/host.component';
-import { ProfileComponent } from './client/user/profile/profile.component';
-import { UpdateComponent } from './client/song/update/update.component';
+import { ProfileComponent } from './component/client/user/profile/profile.component';
+import { UpdateComponent } from './component/client/song/update/update.component';
+import { NavBarComponent } from './component/shares/nav-bar/nav-bar.component';
+import { SideMenuComponent } from './component/shares/side-menu/side-menu.component';
+import { SongPlayerComponent } from './component/shares/song-player/song-player.component';
+import { FooterComponent } from './component/shares/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { UpdateComponent } from './client/song/update/update.component';
     RegisterComponent,
     HostComponent,
     ProfileComponent,
-    UpdateComponent
+    UpdateComponent,
+    NavBarComponent,
+    SideMenuComponent,
+    SongPlayerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
