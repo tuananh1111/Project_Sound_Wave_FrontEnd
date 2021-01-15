@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../service/auth/auth.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
-import {User} from '../model/user';
+import {IUser} from '../model/IUser';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +12,8 @@ import {User} from '../model/user';
 export class RegisterComponent implements OnInit {
   // @ts-ignore
   formRegister: FormGroup;
-  user: User;
+  // @ts-ignore
+  user: IUser;
 
   constructor(private serviceAuth: AuthService,
               private fb: FormBuilder,
@@ -27,8 +28,9 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  // tslint:disable-next-line:typedef
   register() {
-    const user1: User = this.formRegister.value;
+    const user1: IUser = this.formRegister.value;
     this.serviceAuth.register(user1).subscribe(value =>
       alert('Register Account Successful !!!'));
     this.router.navigate(['/login']);
