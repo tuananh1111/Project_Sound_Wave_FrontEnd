@@ -15,6 +15,8 @@ import {AngularFireModule} from "@angular/fire";
 import {environment} from "../environments/environment";
 import {LoginComponent} from "./visiter/login/login.component";
 import {RegisterComponent} from "./visiter/register/register.component";
+import {ResetpasswordComponent} from "./resetpassword/resetpassword.component";
+import {UpdateUserComponent} from "./client/user/update-user/update-user.component";
 
 @NgModule({
   declarations: [
