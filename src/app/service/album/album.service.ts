@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {Environment} from "@angular/compiler-cli/src/ngtsc/typecheck/src/environment";
 import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
@@ -11,10 +10,13 @@ const urlApi = `${environment.apiUrl}`;
 })
 export class AlbumService {
 
-  constructor(private httpClient: HttpClient) { }
-  getAllAlbum(): Observable<any> {
-    return  this.httpClient.get<ICategory[]>(urlApi + '/albums');
+  constructor(private httpClient: HttpClient) {
   }
+
+  getAllAlbum(): Observable<any> {
+    return this.httpClient.get<ICategory[]>(urlApi + '/albums');
+  }
+
   getOneAlbum(id: number): Observable<any> {
     return this.httpClient.get<IAlbum>(urlApi + '/albums' + `/${id}`)
   }

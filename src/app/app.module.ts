@@ -9,13 +9,14 @@ import {JwtInterceptor} from './helper/jwt-interceptor';
 import {ErrorInterceptor} from './helper/error-interceptor';
 import { HostComponent } from './host/host.component';
 import {CreateNewSongComponent} from "./component/song/create-new-song/create-new-song.component";
-import {ListSongComponent} from "./component/song/list-song/list-song.component";
 import {AngularFireStorageModule} from "@angular/fire/storage";
 import {AngularFireModule} from "@angular/fire";
 import {environment} from "../environments/environment";
 import {LoginComponent} from "./visiter/login/login.component";
 import {RegisterComponent} from "./visiter/register/register.component";
+import {ListSongComponent} from "./component/song/list-song/list-song.component";
 
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
