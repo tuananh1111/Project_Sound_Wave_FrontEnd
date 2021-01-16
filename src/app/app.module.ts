@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {LoginComponent} from './visiter/login/login.component';
-import {RegisterComponent} from './visiter/register/register.component';
+// import {RegisterComponent} from './visiter/register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {JwtInterceptor} from './helper/jwt-interceptor';
@@ -22,7 +22,7 @@ import {UpdateUserComponent} from './client/user/update-user/update-user.compone
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
+    // RegisterComponent,
     HostComponent,
     CreateNewSongComponent,
     ListSongComponent,

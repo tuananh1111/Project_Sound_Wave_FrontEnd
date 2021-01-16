@@ -8,6 +8,7 @@ import {CreateNewSongComponent} from './component/song/create-new-song/create-ne
 import {ListSongComponent} from './component/song/list-song/list-song.component';
 import {RegisterComponent} from './visiter/register/register.component';
 import {UpdateUserComponent} from './client/user/update-user/update-user.component';
+import {AppComponent} from './app.component';
 
 const routes: Routes = [
   {
