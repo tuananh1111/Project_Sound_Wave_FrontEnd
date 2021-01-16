@@ -32,7 +32,7 @@
                        id="username" name="username" required>
               </div>
               <div class="alert alert-danger mt-1" role="alert"
-                   *ngIf="formRegister.get('username')!.invalid && formRegister.get('username')!.touched">
+                   *ngIf="!formRegister.get('username')!.valid && formRegister.get('username')!.touched">
                 <span>Name is required.</span>
               </div>
 
@@ -47,7 +47,7 @@
                        id="validationCustom03" required>
               </div>
               <div class="alert alert-danger mt-1" role="alert"
-                   *ngIf="formRegister.get('password')!.invalid && formRegister.get('password')!.touched">
+                   *ngIf="!formRegister.get('password')!.valid && formRegister.get('password')!.touched">
                 <span>Password is required.</span>
               </div>
 
@@ -61,7 +61,7 @@
                 <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Re-Password" id="validationCustom04" required>
               </div>
               <div class="alert alert-danger mt-1" role="alert"
-                   *ngIf="formRegister.get('confirmPassword')!.invalid && formRegister.get('confirmPassword')!.touched">
+                   *ngIf="!formRegister.get('confirmPassword')!.valid && formRegister.get('confirmPassword')!.touched">
                 <span>Confirm password is required.</span>
               </div>
 
@@ -76,7 +76,7 @@
                        id="validationCustom05" required>
               </div>
               <div class="alert alert-danger mt-1" role="alert"
-                   *ngIf="formRegister.get('phoneNumber')!.invalid && formRegister.get('phoneNumber')!.touched">
+                   *ngIf="!formRegister.get('phoneNumber')!.valid && formRegister.get('phoneNumber')!.touched">
                 <span>Phone's number is required.</span>
               </div>
 
@@ -88,12 +88,12 @@
                                 </span>
               </div>
               <div class="alert alert-danger mt-1" role="alert"
-                   *ngIf="formRegister.get('check').invalid && formRegister.get('check').touched">
+                   *ngIf="!formRegister.get('check')!.valid && formRegister.get('check')!.touched">
                 <span>You must agree to continue.</span>
               </div>
 
 
-              <button class="btn btn-danger btn-block btn-round" id="submitButton" [disabled]="!formRegister.valid" type="submit">Sign Up</button>
+              <button class="btn btn-danger btn-block btn-round" id="submitButton" type="submit">Sign Up</button>
             </form>
           </div>
         </div>
@@ -104,5 +104,4 @@
     </div>
   </div>
 </div>
-
 

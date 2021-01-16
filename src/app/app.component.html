@@ -26,8 +26,20 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="btn badge-info " [routerLink]="['/login']">Log In</a>
+        <a class="btn badge-info" [routerLink]="['/login']">Log In</a>
       </li>
+      <li class="nav-item">
+        <a class="btn badge-info" (click)="logout()">Log Out</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn badge-info" [routerLink]="['/resetpassword']">Reset Password</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn badge-info" [routerLink]="['/profile/update']">Update Profile</a>
+      </li>
+<!--      <li class="nav-item">-->
+<!--&lt;!&ndash;        <a class="btn badge-info" [routerLink]="['/profile', user.username]">{{user.username}}</a>&ndash;&gt;-->
+<!--      </li>-->
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

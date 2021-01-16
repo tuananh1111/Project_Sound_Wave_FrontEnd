@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../service/auth/auth.service";
-import {UserService} from "../service/user/user.service";
-import {IUser} from "../model/IUser";
-import {UserToken} from "../model/user-token";
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../service/auth/auth.service';
+import {UserToken} from '../model/user-token';
+import {User} from '../model/user';
+import {UserService} from '../service/user/user.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -13,9 +13,10 @@ import {Router} from '@angular/router';
 export class HostComponent implements OnInit {
 
   // @ts-ignore
-  user: IUser;
+  user: Observable<any>;
   // @ts-ignore
-  userCurrent: UserToken;
+  currentUser: UserToken;
+
   constructor(
     private authService: AuthService,
     private userService: UserService,
@@ -24,7 +25,7 @@ export class HostComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.currentUser.subscribe(value => {
-      this.userCurrent = value;
+      this.currentUser = value;
       this.userService.getUserByUsername(value.username).subscribe(value1 => {
         this.user = value1;
       });

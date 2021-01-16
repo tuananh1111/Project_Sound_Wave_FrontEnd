@@ -1,7 +1,7 @@
-export interface IUser {
+export interface User {
   id?: number;
   username?: string;
   password?: string;
-  phoneNumber?: string;
+  comfirmPassword?: string;
   fullName?: string;
 }

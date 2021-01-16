@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../../service/auth/auth.service';
 import {UserToken} from '../../model/user-token';
 import {first} from 'rxjs/operators';
-import {IUser} from '../../model/IUser';
+import {User} from '../../model/user';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +13,7 @@ import {IUser} from '../../model/IUser';
 export class LoginComponent implements OnInit {
   // @ts-ignore
   currentUser: UserToken;
-  user: IUser = {
+  user: User = {
     username: '',
     password: ''
   };
@@ -27,8 +27,10 @@ export class LoginComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
+    this.authService.currentUser.subscribe(value => this.currentUser = value);
     this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl || '/host';
   }
+
   // tslint:disable-next-line:typedef
   login() {
     // @ts-ignore

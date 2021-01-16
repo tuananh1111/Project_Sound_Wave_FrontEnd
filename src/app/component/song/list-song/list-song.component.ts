@@ -21,11 +21,6 @@ export class ListSongComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllSong();
-    this.sub = this.activated.paramMap.subscribe( (paramMap: ParamMap) => {
-      this.id = +paramMap.get('id');
-      this.getProduct(this.id);
-    });
-
   }
 
   getAllSong() {
