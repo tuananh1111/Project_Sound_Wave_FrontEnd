@@ -2,7 +2,7 @@
   <div *ngFor="let song of songs">
     <table>
       <tr>
-        <td><img src="{{song.avatar}}" alt="" style="width: 100px ; height: 100px"></td>
+        <td><img (click)="playThisSong(song.id)" src="{{song.avatar}}" alt="" style="width: 100px ; height: 100px"></td>
         <td>
           <h3>{{song.name}}</h3>
           <h5>{{song.musician}}</h5>

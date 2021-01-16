@@ -181,7 +181,7 @@ export class CreateNewSongComponent implements OnInit {
       song.singer = singer;
     }
     if (category != null){
-      song.singer = category;
+      song.category = category;
     }
     if (album != null){
       song.album = album;

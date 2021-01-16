@@ -23,7 +23,7 @@ export class SongService {
     return this.httpClient.post<ISong>(URL_API + '/songs' , song);
   }
 
-  // getSongById(songId: number): Observable<any> {
-  //   return this.httpClient.get(URL_API + '/so');
-  // }
+  getSongById(id: number): Observable<any> {
+    return this.httpClient.post(URL_API + `/songs/getsong`, id);
+  }
 }
