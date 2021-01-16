@@ -1,8 +1,7 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ISong} from '../model/song/ISong';
 import {SongService} from '../service/song/song.service';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {Router} from '@angular/router';
+import {BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: 'app-play',
@@ -14,19 +13,17 @@ export class PlayComponent implements OnInit {
   songCurrentObject: BehaviorSubject<ISong> = new BehaviorSubject<ISong>(JSON.parse(localStorage.getItem('songSelected')));
   // @ts-ignore
   song: ISong;
+  // @ts-ignore
+
   constructor(
-    private songService: SongService,
-    private router: Router
+    private songService: SongService
   ) {
   }
 
   ngOnInit(): void {
     if (this.songCurrentObject.value !== null) {
-      console.log(this.songCurrentObject.value);
       // @ts-ignore
       this.song = this.songCurrentObject.value;
-      // console.log(this.song);
-      // }
     }
   }
 }

@@ -15,7 +15,6 @@ import {environment} from '../environments/environment';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireModule} from '@angular/fire';
 import {UpdateUserComponent} from './client/user/update-user/update-user.component';
-
 import {CreateNewSongComponent} from './component/song/create-new-song/create-new-song.component';
 import {ResetpasswordComponent} from './resetpassword/resetpassword.component';
 import {PlayComponent} from './play/play.component';

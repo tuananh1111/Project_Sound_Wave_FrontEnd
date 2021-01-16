@@ -10,11 +10,7 @@ import { EventEmitter } from '@angular/core';
 })
 export class ListSongComponent implements OnInit {
   songs: ISong[] = [];
-  // @ts-ignore
-
-  // @ts-ignore
-  // @Output() playSong = new EventEmitter<ISong>();
-  // // @ts-ignore
+ // @ts-ignore
   song: ISong;
 
   constructor(private songService: SongService) {
@@ -35,6 +31,7 @@ export class ListSongComponent implements OnInit {
       this.song = value;
       localStorage.setItem('songSelected', JSON.stringify(this.song));
       // console.log(this.song);
+      window.location.reload();
     });
   }
 
