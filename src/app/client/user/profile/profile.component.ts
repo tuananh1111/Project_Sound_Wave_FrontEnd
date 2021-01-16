@@ -1,15 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {AuthService} from '../service/auth/auth.service';
-import {UserToken} from '../model/user-token';
-import {User} from '../model/user';
-import {UserService} from '../service/user/user.service';
+import { Component, OnInit } from '@angular/core';
+import {UserToken} from '../../../model/user-token';
+import {UserService} from '../../../service/user/user.service';
+import {AuthService} from '../../../service/auth/auth.service';
 
 @Component({
-  selector: 'app-host',
-  templateUrl: './host.component.html',
-  styleUrls: ['./host.component.css']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class HostComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   // @ts-ignore
   user: Observable<any>;
   // @ts-ignore
@@ -29,5 +28,4 @@ export class HostComponent implements OnInit {
       });
     });
   }
-
 }

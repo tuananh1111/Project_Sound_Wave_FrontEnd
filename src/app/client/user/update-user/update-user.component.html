@@ -1,0 +1,72 @@
+<!--<form [formGroup]="updateUserForm" (ngSubmit)="updateUser()">-->
+<!--  <table>-->
+<!--    <tr>-->
+<!--      <td>ID</td>-->
+<!--      <td>Username</td>-->
+<!--      <td>Fullname</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>-->
+<!--        <input type="text" formControlName="id" name="id" [value]="user.id">-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <input type="text" formControlName="username" name="username" [value]="user.username">-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <input type="text" formControlName="fullName" [value]="user.fullName">-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td></td>-->
+<!--      <td>-->
+<!--        <button class="btn btn-success" type="submit">Cập Nhật</button>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--  </table>-->
+<!--</form>-->
+
+<div class="wrapper">
+  <div style="height: 730px">
+    <div class="container">
+      <div class="row" style="">
+        <div class="col-lg-4 col-sm-6 mr-auto ml-auto"
+             style="margin-top: 100px;padding: 30px;background-color: white;border-radius: 20px">
+          <div class="card card-deck" style="border-color: white">
+            <form [formGroup]="updateUserForm" (ngSubmit)="updateUser()">
+              <div style="margin-left: 45%">
+<!--                <label class="fileContainer" for="up_button">-->
+<!--                  <img style="object-fit: cover; width: 100px; height: 100px; border-radius: 50%" formControlName="avatar" [src]="user.avatar" alt="" class="main-profile-img" id="output"/>-->
+<!--                </label>-->
+<!--                <p hidden><input type="file" accept="image/*" id="up_button" onchange="loadFile(event)"-->
+<!--                                 name="avatarFile"></p>-->
+              </div>
+              <div>
+                <label>ID</label>
+                <input type="text" formControlName="id" id="id" readonly="readonly" [value]="user.id">
+              </div>
+              <div>
+                <label>Username</label>
+                <input type="text" formControlName="username" id="username" readonly="readonly" [value]="user.username">
+              </div>
+              <div>
+                <label>Full Name</label>
+                <input type="text" formControlName="fullName" id="fullName" [value]="user.fullName">
+              </div>
+              <button type="submit" class="btn-danger">Update</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<script>-->
+<!--  var loadFile = function (event) {-->
+<!--    var output = document.getElementById('output');-->
+<!--    output.src = URL.createObjectURL(event.target.files[0]);-->
+<!--    output.onload = function () {-->
+<!--      URL.revokeObjectURL(output.src) // free memory-->
+<!--    }-->
+<!--  };-->
+<!--</script>-->

@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
+import {User} from '../../../model/user';
+import {ISinger} from '../../../model/singer/ISinger';
+import {ICategory} from '../../../model/category/ICategory';
+import {IAlbum} from '../../../model/album/IAlbum';
 import {AngularFireStorage} from '@angular/fire/storage';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {AuthService} from '../../../service/auth/auth.service';
+import {UserService} from '../../../service/user/user.service';
+import {SongService} from '../../../service/song/song.service';
+import {SingerService} from '../../../service/singer/singer.service';
+import {CategoryService} from '../../../service/category/category.service';
+import {AlbumService} from '../../../service/album/album.service';
 import {finalize} from 'rxjs/operators';
-import {ISong} from "../../../model/song/ISong";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
-import {AuthService} from "../../../service/auth/auth.service";
-import {UserService} from "../../../service/user/user.service";
-import {UserToken} from "../../../model/user-token";
-import {IUser} from "../../../model/IUser";
-import {SongService} from "../../../service/song/song.service";
-import {SingerService} from "../../../service/singer/singer.service";
-import {ISinger} from "../../../model/singer/ISinger";
-import {CategoryService} from "../../../service/category/category.service";
-import {ICategory} from "../../../model/category/ICategory";
-import {IAlbum} from "../../../model/album/IAlbum";
-import {AlbumService} from "../../../service/album/album.service";
+import {ISong} from '../../../model/song/ISong';
 declare var $: any;
 declare var Swal: any;
 @Component({
@@ -34,7 +33,7 @@ export class CreateNewSongComponent implements OnInit {
   userCurrent: UserToken;
   // @ts-ignore
   user: IUser;
-  title = "cloudsSorage";
+  title = 'cloudsSorage';
   // @ts-ignore
   selectedFile: File = null;
   // @ts-ignore
@@ -110,8 +109,9 @@ export class CreateNewSongComponent implements OnInit {
       // });
   }
   // @ts-ignore
+  // tslint:disable-next-line:typedef
   saveUrlMp3(event) {
-    let n = Date.now();
+    const n = Date.now();
     const file = event.target.files[0];
     const filePath = `RoomsImages/${n}`;
     const fileRef = this.storage.ref(filePath);
@@ -135,8 +135,9 @@ export class CreateNewSongComponent implements OnInit {
     });
   }
   // @ts-ignore
+  // tslint:disable-next-line:typedef
   saveAvatar(event) {
-    let n = Date.now();
+    const n = Date.now();
     const file = event.target.files[0];
     const filePath = `RoomsImages/${n}`;
     const fileRef = this.storage.ref(filePath);
@@ -159,12 +160,13 @@ export class CreateNewSongComponent implements OnInit {
       }
     });
   }
+  // tslint:disable-next-line:typedef
   async setNewSong() {
-    let user = await this.getUserFromDB();
-    let singer: ISinger = await this.getSinger();
-    let category: ICategory = await this.getCategory();
-    let album: IAlbum = await  this.getOneAlbum();
-    let song: ISong = {
+    const user: User = await this.getUserFromDB();
+    const singer: ISinger = await this.getSinger();
+    const category: ICategory = await this.getCategory();
+    const album: IAlbum = await  this.getOneAlbum();
+    const song: ISong = {
       name: this.songForm.get('name')?.value,
       description: this.songForm.get('description')?.value,
       urlMp3: this.urlMp3,
@@ -172,7 +174,7 @@ export class CreateNewSongComponent implements OnInit {
       musician: this.songForm.get('description')?.value,
       views: this.songForm.get('views')?.value,
     };
-    if(user != null){
+    if (user != null){
       song.user = user;
     }
     if (singer != null){
@@ -186,6 +188,7 @@ export class CreateNewSongComponent implements OnInit {
     }
     return song;
   }
+  // tslint:disable-next-line:typedef
   async save() {
     const newS: ISong = await this.setNewSong();
     console.log(newS);
@@ -193,11 +196,11 @@ export class CreateNewSongComponent implements OnInit {
       alert('them roi');
       // this.router.navigate(['songs']);
       console.log(this.urlMp3);
-    })
+    });
   }
 
   async getUserFromDB() {
-    let userFromLocalStorage = this.authService.currentUserValue;
+    const userFromLocalStorage = this.authService.currentUserValue;
     return this.userService.getUserByUsername(userFromLocalStorage.username).toPromise();
   }
 
@@ -205,10 +208,10 @@ export class CreateNewSongComponent implements OnInit {
   getAllSinger(): ISinger[] {
       this.singerService.getAllSinger().subscribe(value => {
         this.singers = value;
-      })
+      });
   }
   getSinger() {
-    let singer_id = +this.songForm.get('singer')?.value;
+    const singer_id = +this.songForm.get('singer')?.value;
     return  this.singerService.getOneSinger(singer_id).toPromise();
   }
   // @ts-ignore
@@ -216,8 +219,8 @@ export class CreateNewSongComponent implements OnInit {
       this.categoryService.getAllCategory().subscribe(value => this.categories = value);
   }
   getCategory() {
-      let category_id = +this.songForm.get('category')?.value;
-    return  this.categoryService.getCategory(category_id).toPromise();
+      const category_id = +this.songForm.get('category')?.value;
+      return  this.categoryService.getCategory(category_id).toPromise();
   }
   // @ts-ignore
   getAllAlbum(): IAlbum[] {
@@ -225,8 +228,8 @@ export class CreateNewSongComponent implements OnInit {
   }
 
   getOneAlbum(): IAlbum {
-      let album_id = +this.songForm.get('album')?.value;
+      const album_id = +this.songForm.get('album')?.value;
       // @ts-ignore
-    return  this.albumService.getOneAlbum(album_id).toPromise();
+      return  this.albumService.getOneAlbum(album_id).toPromise();
   }
 }

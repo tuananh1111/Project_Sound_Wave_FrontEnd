@@ -64,8 +64,20 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="btn badge-info " [routerLink]="['/login']">Log In</a>
+        <a class="btn badge-info" [routerLink]="['/login']">Log In</a>
       </li>
+      <li class="nav-item">
+        <a class="btn badge-info" (click)="logout()">Log Out</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn badge-info" [routerLink]="['/resetpassword']">Reset Password</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn badge-info" [routerLink]="['/profile/update']">Update Profile</a>
+      </li>
+<!--      <li class="nav-item">-->
+<!--&lt;!&ndash;        <a class="btn badge-info" [routerLink]="['/profile', user.username]">{{user.username}}</a>&ndash;&gt;-->
+<!--      </li>-->
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -96,7 +108,7 @@
   <audio style=" width: 50%; margin-left: 20%;margin-top: 25px; border-color: #2c064a "  controls>
     <source src="horse.ogg" type="audio/ogg">
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
+    no no no
   </audio>
 </div>
 <!--<footer class="card-footer" style="width: 100%;height: 200px; position: absolute;overflow: hidden;background-color: beige">-->
