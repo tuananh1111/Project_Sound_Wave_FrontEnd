@@ -192,6 +192,7 @@ export class CreateNewSongComponent implements OnInit {
   async save() {
     const newS: ISong = await this.setNewSong();
     console.log(newS);
+    // @ts-ignore
     this.songService.createSong(newS).subscribe(() => {
       alert('them roi');
       // this.router.navigate(['songs']);

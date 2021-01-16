@@ -17,12 +17,13 @@ import {environment} from '../environments/environment';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireModule} from '@angular/fire';
 import {UpdateUserComponent} from './client/user/update-user/update-user.component';
+import {RegisterComponent} from './visiter/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    // RegisterComponent,
+    RegisterComponent,
     HostComponent,
     CreateNewSongComponent,
     ListSongComponent,
