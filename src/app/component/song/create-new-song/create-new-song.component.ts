@@ -198,12 +198,10 @@ export class CreateNewSongComponent implements OnInit {
       console.log(this.urlMp3);
     });
   }
-
   async getUserFromDB() {
     const userFromLocalStorage = this.authService.currentUserValue;
     return this.userService.getUserByUsername(userFromLocalStorage.username).toPromise();
   }
-
   // @ts-ignore
   getAllSinger(): ISinger[] {
       this.singerService.getAllSinger().subscribe(value => {
