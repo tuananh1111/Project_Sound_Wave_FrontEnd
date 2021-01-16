@@ -1,8 +1,5 @@
 <p>list-song works!</p>
 <div *ngFor="let song of songs">
-  <img src="{{song.avatar}}" alt="" style="width: 100px ; height: 100px">
-  <audio src="{{song.urlMp3}}" controls>
-    Trình duyệt không hỗ trợ phát âm thanh
-  </audio>
+  <a [routerLink]="['/songs', song.id]"><img src="{{song.avatar}}" alt="" style="width: 100px ; height: 100px"></a>
 </div>
-<p></p>
+

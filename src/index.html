@@ -6,9 +6,49 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    .rotate {
+      animation: rotation 8s infinite linear;
+      border-radius: 50%;
+      object-fit: cover;
+      width: 80px;
+      height: 80px;
+      margin-top: -50px;
+      margin-left: 10px;
+    }
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-panel {
+      background-color: #17a2b8;
+      color: #17a2b8;
+    }
+
+    @media (max-width: 767px) {
+      .hidden-xs {
+        display: none !important;
+      }
+    }
+
+    #audioTag{
+      background-color: #17a2b8;
+      border:#17a2b8;
+      border-top: 1px white;
+      border-style: solid;
+    }
+
+
+    @keyframes rotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(359deg);
+      }
+    }
+  </style>
 </head>
 <body style="height: 730px; background-image:linear-gradient(rgba(0, 0, 0, 0.2),
                        rgba(0, 0, 0, 0.2)), url('assets/img/royalty-free-music-Background.jpg'); background-attachment: fixed;background-repeat: no-repeat" >
   <app-root></app-root>
+
 </body>
 </html>

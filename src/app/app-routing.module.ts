@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import {HostComponent} from './host/host.component';
 import {AuthGuard} from './helper/auth-guard';
 import {CreateNewSongComponent} from './component/song/create-new-song/create-new-song.component';
-import {ListSongComponent} from "./component/song/list-song/list-song.component";
-import {LoginComponent} from "./visiter/login/login.component";
-import {RegisterComponent} from "./visiter/register/register.component";
+
+import {LoginComponent} from './visiter/login/login.component';
+import {RegisterComponent} from './visiter/register/register.component';
+import {ListSongComponent} from './component/song/list-song/list-song.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,10 @@ const routes: Routes = [
   {
     path: 'songs',
     component: ListSongComponent
-
+  },
+  {
+    path: 'songs/:id',
+    component: ListSongComponent
   }
 ];
 

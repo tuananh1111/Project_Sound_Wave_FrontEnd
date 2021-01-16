@@ -16,6 +16,7 @@ import {environment} from "../environments/environment";
 import {LoginComponent} from "./visiter/login/login.component";
 import {RegisterComponent} from "./visiter/register/register.component";
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,7 @@ import {RegisterComponent} from "./visiter/register/register.component";
     RegisterComponent,
     HostComponent,
     CreateNewSongComponent,
-    ListSongComponent
+    ListSongComponent,
   ],
   imports: [
     BrowserModule,
