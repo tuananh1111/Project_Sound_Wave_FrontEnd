@@ -53,7 +53,7 @@
         <a class="nav-link" [routerLink]="['/songs']">Songs</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/songs/create']">Create song</a>
+        <a class="nav-link" *ngIf="currentUser" [routerLink]="['/songs/create']">Create song</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
