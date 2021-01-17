@@ -6,11 +6,11 @@ import {AuthGuard} from './helper/auth-guard';
 import {LoginComponent} from './visiter/login/login.component';
 
 import {ListSongComponent} from './component/song/list-song/list-song.component';
-// import {RegisterComponent} from './visiter/register/register.component';
 import {UpdateUserComponent} from './client/user/update-user/update-user.component';
 import {AppComponent} from './app.component';
 import {ResetpasswordComponent} from './resetpassword/resetpassword.component';
 import {CreateNewSongComponent} from './component/song/create-new-song/create-new-song.component';
+import {MySongComponent} from "./client/user/my-song/my-song.component";
 
 const routes: Routes = [
   {
@@ -41,8 +41,18 @@ const routes: Routes = [
     component: CreateNewSongComponent
   },
   {
+    path: 'songs/my-songs/:id',
+    component: MySongComponent
+  },
+  {
     path: 'songs',
-    component: ListSongComponent
+    component: ListSongComponent,
+    // children: [
+    //   {
+    //     path: "my-songs/:id",
+    //     component: MySongComponent
+    //   }
+    // ]
   },
   {
     path: '',
@@ -50,8 +60,11 @@ const routes: Routes = [
   }
 ];
 
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+// @ts-ignore
 export class AppRoutingModule { }
+// @ts-ignore

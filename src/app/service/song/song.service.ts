@@ -26,4 +26,7 @@ export class SongService {
   getSongById(id: number): Observable<any> {
     return this.httpClient.post(URL_API + `/songs/getsong`, id);
   }
+  getUserSong(id: number): Observable<any> {
+    return this.httpClient.get<ISong[]>(URL_API + `/songs/my-songs/${id}`);
+  }
 }

@@ -18,6 +18,7 @@ import {UpdateUserComponent} from './client/user/update-user/update-user.compone
 import {CreateNewSongComponent} from './component/song/create-new-song/create-new-song.component';
 import {ResetpasswordComponent} from './resetpassword/resetpassword.component';
 import {PlayComponent} from './play/play.component';
+import { MySongComponent } from './client/user/my-song/my-song.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {PlayComponent} from './play/play.component';
     ListSongComponent,
     ResetpasswordComponent,
     UpdateUserComponent,
-    PlayComponent
+    PlayComponent,
+    MySongComponent
   ],
   imports: [
     BrowserModule,

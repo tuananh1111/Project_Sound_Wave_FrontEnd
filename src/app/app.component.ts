@@ -4,6 +4,7 @@ import {UserService} from './service/user/user.service';
 import {AuthService} from './service/auth/auth.service';
 import {Router} from '@angular/router';
 import {ISong} from './model/song/ISong';
+import {User} from "./model/user";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ import {ISong} from './model/song/ISong';
 export class AppComponent {
   titleFirst = 'Project-Sound-Wave-Front-End';
   // @ts-ignore
-  user: Observable<any>;
+  user: User;
   // @ts-ignore
   currentUser: UserToken;
   // @ts-ignore
