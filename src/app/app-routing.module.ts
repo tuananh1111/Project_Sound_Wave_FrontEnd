@@ -33,7 +33,8 @@ const routes: Routes = [
   // },
   {
     path: 'profile/update',
-    component: UpdateUserComponent
+    component: UpdateUserComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'songs/create',
@@ -41,6 +42,10 @@ const routes: Routes = [
   },
   {
     path: 'songs',
+    component: ListSongComponent
+  },
+  {
+    path: '',
     component: ListSongComponent
   }
 ];
