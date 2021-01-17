@@ -1,0 +1,7 @@
+.mb-5:hover {
+  box-shadow: 0px 0px 20px #fff;
+}
+
+.mb-5 {
+  transition: box-shadow .3s;
+}
