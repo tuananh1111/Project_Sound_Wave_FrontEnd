@@ -1,18 +1,25 @@
-<div style="margin-left: 20%; padding-top: 150px; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white">
-  <div *ngFor="let song of songs">
-    <table>
-      <tr>
-        <td><img src="{{song.avatar}}" alt="" style="width: 100px ; height: 100px"></td>
-        <td>
-          <h3>{{song.name}}</h3>
-          <h5>{{song.musician}}</h5>
-        </td>
-      </tr>
+<div style="padding-bottom: 200px;padding-top: 150px; margin-left: 30%">
 
-
-      <!--  <audio src="{{song.urlMp3}}" controls>-->
-      <!--    Trình duyệt không hỗ trợ phát âm thanh-->
-      <!--  </audio>-->
-    </table>
+  <div style="display: inline-block" >
+    <div style="width: 10px;float: left; text-align: center; margin-top: 80px;margin-right: 50px">
+      <a style="background-color: transparent;border-color: transparent" class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true"><h1>&laquo;</h1></span>
+        <span class="sr-only">Previous</span>
+      </a></div>
+    <div *ngFor="let song of songs" style="display: inline-block; width: 170px; margin: 10px" class="mb-5">
+      <div  style="width: auto" class="card">
+        <img class="card-img-top" style="width: auto; height: 150px;object-fit: cover" src="{{song.avatar}}" alt="">
+        <div style="text-wrap: normal; background-color: #007bff" class="card-footer">
+          <h5>{{song.name}}</h5>
+          <!--            <h6>{{song.singer.name}}</h6>-->
+        </div>
+      </div>
+    </div>
+    <div style="width: 10px;float: right; text-align: center; margin-top: 80px" >
+      <a style="background-color: transparent;border-color: transparent; margin-left: 10px" class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true"><h1>&raquo;</h1></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
   </div>
 </div>
