@@ -11,6 +11,9 @@ import {UpdateUserComponent} from './client/user/update-user/update-user.compone
 import {AppComponent} from './app.component';
 import {ResetpasswordComponent} from './resetpassword/resetpassword.component';
 import {CreateNewSongComponent} from './component/song/create-new-song/create-new-song.component';
+import {RegisterComponent} from "./visiter/register/register.component";
+import {UpdateComponent} from "./component/song/update/update.component";
+import {MySongComponent} from "./client/user/my-song/my-song.component";
 
 const routes: Routes = [
   {
