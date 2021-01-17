@@ -4,7 +4,7 @@ import {UserService} from './service/user/user.service';
 import {AuthService} from './service/auth/auth.service';
 import {Router} from '@angular/router';
 import {ISong} from './model/song/ISong';
-import {User} from "./model/user";
+import {BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +14,15 @@ import {User} from "./model/user";
 export class AppComponent {
   titleFirst = 'Project-Sound-Wave-Front-End';
   // @ts-ignore
-  user: User;
+  user: Observable<any>;
   // @ts-ignore
   currentUser: UserToken;
   // @ts-ignore
   // song: ISong;
   song: ISong;
+
+  // @ts-ignore
+  songCurrentObject: BehaviorSubject<ISong> = new BehaviorSubject<ISong>(JSON.parse(localStorage.getItem('songSelected')));
 
   constructor(
     private userService: UserService,

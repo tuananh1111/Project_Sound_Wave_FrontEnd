@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ISong} from '../model/song/ISong';
 import {SongService} from '../service/song/song.service';
 import {BehaviorSubject} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-play',
@@ -13,10 +14,7 @@ export class PlayComponent implements OnInit {
   songCurrentObject: BehaviorSubject<ISong> = new BehaviorSubject<ISong>(JSON.parse(localStorage.getItem('songSelected')));
   // @ts-ignore
   song: ISong;
-  // @ts-ignore
-
   constructor(
-    private songService: SongService
   ) {
   }
 
@@ -26,5 +24,17 @@ export class PlayComponent implements OnInit {
       this.song = this.songCurrentObject.value;
     }
   }
+
+//   this.activatedRouter.params.subscribe(params => {
+//   this.bookId = params.id;
+//   this.bookService.getBookById(this.bookId).subscribe(result => {
+//   this.book = result;
+//   this.updateBookForm.setValue({
+//                                  title: result.title,
+//                                  author: result.author,
+//                                  description: result.description
+//                                });
+// });
+// });
 }
 

@@ -61,10 +61,10 @@
       <li class="nav-item" *ngIf="currentUser">
         <a class="btn badge-info" (click)="logout()">Log Out</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="currentUser">
         <a class="btn badge-info" [routerLink]="['/resetpassword']">Reset Password</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="currentUser">
         <a class="btn badge-info" [routerLink]="['/profile/update']">Update Profile</a>
         <a class="btn badge-info" *ngIf="currentUser" [routerLink]="['/songs/my-songs/', user.id ]">My Song</a>
       </li>

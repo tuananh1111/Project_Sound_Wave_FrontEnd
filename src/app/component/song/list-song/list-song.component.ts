@@ -31,7 +31,7 @@ export class ListSongComponent implements OnInit {
     this.songService.getSongById(id).subscribe(value => {
       this.song = value;
       localStorage.setItem('songSelected', JSON.stringify(this.song));
-      // console.log(this.song);
+      console.log(this.song);
       window.location.reload();
     });
     this.songService.countViews(id).toPromise().then(r => console.log("ok"));

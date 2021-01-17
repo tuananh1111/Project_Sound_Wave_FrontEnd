@@ -27,16 +27,21 @@ export class LoginComponent implements OnInit {
   // tslint:disable-next-line:typedef
   ngOnInit() {
     this.authService.currentUser.subscribe(value => this.currentUser = value);
-    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl || '/host';
+    // this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl || '/host';
   }
 
   // tslint:disable-next-line:typedef
   login() {
-    // @ts-ignore
-    this.authService.login(this.user.username, this.user.password)
-      .pipe(first())
-      .subscribe(data => {
-        this.router.navigate([this.returnUrl]);
-      });
+    if (this.user.username === '' || this.user.password === '') {
+      alert('Please enter your username, password!');
+    } else {
+      // @ts-ignore
+      this.authService.login(this.user.username, this.user.password)
+        .pipe(first())
+        .subscribe(data => {
+          window.location.replace('/host');
+          // this.router.navigate([this.returnUrl]);
+        });
+    }
   }
 }
