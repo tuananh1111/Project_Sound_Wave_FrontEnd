@@ -27,12 +27,15 @@ export class ListSongComponent implements OnInit {
   }
 
   playThisSong(id: any) {
+
     this.songService.getSongById(id).subscribe(value => {
       this.song = value;
       localStorage.setItem('songSelected', JSON.stringify(this.song));
       // console.log(this.song);
       window.location.reload();
     });
+    this.songService.countViews(id).toPromise().then(r => console.log("ok"));
+    console.log("vao k");
   }
 
   // delete(){

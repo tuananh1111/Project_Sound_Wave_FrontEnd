@@ -11,6 +11,7 @@ import {AppComponent} from './app.component';
 import {ResetpasswordComponent} from './resetpassword/resetpassword.component';
 import {CreateNewSongComponent} from './component/song/create-new-song/create-new-song.component';
 import {MySongComponent} from "./client/user/my-song/my-song.component";
+import {UpdateComponent} from "./component/song/update/update.component";
 
 const routes: Routes = [
   {
@@ -45,12 +46,21 @@ const routes: Routes = [
     component: MySongComponent
   },
   {
+    path: 'songs/update/:id',
+    component: UpdateComponent
+  },
+
+  {
     path: 'songs',
     component: ListSongComponent,
     // children: [
+      // {
+      //   path: 'my-songs/:id',
+      //   component: MySongComponent
+      // },
     //   {
-    //     path: "my-songs/:id",
-    //     component: MySongComponent
+    //     path: 'update/:id',
+    //     component: UpdateComponent
     //   }
     // ]
   },

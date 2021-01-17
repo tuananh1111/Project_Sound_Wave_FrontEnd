@@ -1,3 +1,8 @@
+import {ISinger} from "../singer/ISinger";
+import {User} from "../user";
+import {ICategory} from "../category/ICategory";
+import {IAlbum} from "../album/IAlbum";
+
 export interface ISong {
   id?: number;
   name?: string;
@@ -6,8 +11,8 @@ export interface ISong {
   avatar?: string;
   musician?: string;
   views?: number;
-  singer?: any;
-  user?: any;
-  category?: any;
-  album?: any;
+  singer?: ISinger;
+  user?: User;
+  category?: ICategory;
+  album?: IAlbum ;
 }
