@@ -70,44 +70,8 @@ export class CreateNewSongComponent implements OnInit {
     album: new FormControl('', Validators.required),
   });
   // tslint:disable-next-line:typedef
-    ngOnInit() {
-      // $(document).ready(function () {
-      //   $('#register').validate({
-      //     rules: {
-      //       name: {
-      //         required: true,
-      //         minlength: 3
-      //       },
-      //       description: {
-      //         required: false,
-      //       },
-      //       musician: {
-      //         required: true
-      //       },
-      //     },
-      //     messages: {
-      //       name: {
-      //         required: "Vui lòng nhập username",
-      //         minlength: "tối thiểu 3 kí tự"
-      //       },
-      //       description: {
-      //         required: ""
-      //       },
-      //     },
-      //     errorElement: 'span',
-      //     errorPlacement: function (error, element) {
-      //       error.addClass('invalid-feedback');
-      //       element.closest('.input-group').append(error);
-      //     },
-      //     highlight: function (element, errorClass, validClass) {
-      //       $(element).addClass('is-invalid');
-      //     },
-      //     unhighlight: function (element, errorClass, validClass) {
-      //       $(element).removeClass('is-invalid');
-      //     }
-      //   });
-      // });
-  }
+    ngOnInit() {}
+
   // @ts-ignore
   // tslint:disable-next-line:typedef
   saveUrlMp3(event) {
@@ -181,7 +145,7 @@ export class CreateNewSongComponent implements OnInit {
       song.singer = singer;
     }
     if (category != null){
-      song.singer = category;
+      song.category = category;
     }
     if (album != null){
       song.album = album;
