@@ -3,6 +3,7 @@ import {UserToken} from './model/user-token';
 import {UserService} from './service/user/user.service';
 import {AuthService} from './service/auth/auth.service';
 import {Router} from '@angular/router';
+import {ISong} from './model/song/ISong';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,9 @@ export class AppComponent {
   user: Observable<any>;
   // @ts-ignore
   currentUser: UserToken;
+  // @ts-ignore
+  // song: ISong;
+  song: ISong;
 
   constructor(
     private userService: UserService,
@@ -34,8 +38,13 @@ export class AppComponent {
 
   logout() {
     this.authService.logout();
-    this.router.navigate(['/host']);
+    this.router.navigate(['']);
   }
+  // // @ts-ignore
+  // getSong(value: ISong) {
+  //   this.song = value;
+  //   console.log(this.song);
+  // }
 }
 
 

@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {ISong} from '../../../model/song/ISong';
 import {SongService} from '../../../service/song/song.service';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-list-song',
@@ -9,6 +10,8 @@ import {SongService} from '../../../service/song/song.service';
 })
 export class ListSongComponent implements OnInit {
   songs: ISong[] = [];
+ // @ts-ignore
+  song: ISong;
 
   constructor(private songService: SongService) {
   }
@@ -20,7 +23,15 @@ export class ListSongComponent implements OnInit {
   getAllSong() {
     this.songService.getAllSong().subscribe((data: any) => {
       this.songs = data;
-      console.log(this.songs)
+    });
+  }
+
+  playThisSong(id: any) {
+    this.songService.getSongById(id).subscribe(value => {
+      this.song = value;
+      localStorage.setItem('songSelected', JSON.stringify(this.song));
+      // console.log(this.song);
+      window.location.reload();
     });
   }
 

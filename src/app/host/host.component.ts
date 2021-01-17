@@ -3,6 +3,7 @@ import {AuthService} from '../service/auth/auth.service';
 import {UserToken} from '../model/user-token';
 import {User} from '../model/user';
 import {UserService} from '../service/user/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-host',
@@ -10,6 +11,7 @@ import {UserService} from '../service/user/user.service';
   styleUrls: ['./host.component.css']
 })
 export class HostComponent implements OnInit {
+  titleFirst = 'Project-Sound-Wave-Front-End';
   // @ts-ignore
   user: Observable<any>;
   // @ts-ignore
@@ -17,7 +19,8 @@ export class HostComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {
   }
 
@@ -28,6 +31,11 @@ export class HostComponent implements OnInit {
         this.user = value1;
       });
     });
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['']);
   }
 
 }
