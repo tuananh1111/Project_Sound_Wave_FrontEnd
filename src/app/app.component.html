@@ -73,10 +73,10 @@
       <li class="nav-item" *ngIf="currentUser">
         <a class="btn badge-info" (click)="logout()">Log Out</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="currentUser">
         <a class="btn badge-info" [routerLink]="['/resetpassword']">Reset Password</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="currentUser">
         <a class="btn badge-info" [routerLink]="['/profile/update']">Update Profile</a>
       </li>
 <!--      <li class="nav-item">-->
@@ -117,7 +117,7 @@
 <!--    </audio>-->
 <!--  </div>-->
 
-<!--<footer class="card-footer" style="width: 100%;height: 200px; position: absolute;overflow: hidden;background-color: beige">-->
-<!--  <h1>Footer Content</h1>-->
+<footer class="card-footer" style="width: 100%;height: 200px; position: absolute;overflow: hidden;background-color: beige">
+  <h1>Footer Content</h1>
 
-<!--</footer>-->
+</footer>

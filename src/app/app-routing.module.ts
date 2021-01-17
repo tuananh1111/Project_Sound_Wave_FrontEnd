@@ -6,7 +6,7 @@ import {AuthGuard} from './helper/auth-guard';
 import {LoginComponent} from './visiter/login/login.component';
 
 import {ListSongComponent} from './component/song/list-song/list-song.component';
-// import {RegisterComponent} from './visiter/register/register.component';
+import {RegisterComponent} from './visiter/register/register.component';
 import {UpdateUserComponent} from './client/user/update-user/update-user.component';
 import {AppComponent} from './app.component';
 import {ResetpasswordComponent} from './resetpassword/resetpassword.component';
@@ -27,10 +27,10 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
-  // {
-  //   path: 'register',
-  //   component: RegisterComponent
-  // },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
   {
     path: 'profile/update',
     component: UpdateUserComponent,
@@ -38,7 +38,8 @@ const routes: Routes = [
   },
   {
     path: 'songs/create',
-    component: CreateNewSongComponent
+    component: CreateNewSongComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'songs',

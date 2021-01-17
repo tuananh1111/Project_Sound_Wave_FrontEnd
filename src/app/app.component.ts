@@ -4,6 +4,7 @@ import {UserService} from './service/user/user.service';
 import {AuthService} from './service/auth/auth.service';
 import {Router} from '@angular/router';
 import {ISong} from './model/song/ISong';
+import {BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,9 @@ export class AppComponent {
   // @ts-ignore
   // song: ISong;
   song: ISong;
+
+  // @ts-ignore
+  songCurrentObject: BehaviorSubject<ISong> = new BehaviorSubject<ISong>(JSON.parse(localStorage.getItem('songSelected')));
 
   constructor(
     private userService: UserService,
