@@ -3,6 +3,7 @@ import {UserToken} from './model/user-token';
 import {UserService} from './service/user/user.service';
 import {AuthService} from './service/auth/auth.service';
 import {Router} from '@angular/router';
+import 'bootstrap/dist/js/bootstrap.bundle';
 
 @Component({
   selector: 'app-root',
