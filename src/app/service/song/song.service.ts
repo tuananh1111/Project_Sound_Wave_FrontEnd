@@ -38,4 +38,7 @@ export class SongService {
   countViews(id: number): Observable<any> {
     return this.httpClient.post<ISong>(URL_API + `/songs/count-views`, id);
   }
+  deleteSong(id: number): Observable<any> {
+    return this.httpClient.delete<any>(URL_API + `/songs/${id}`);
+  }
 }

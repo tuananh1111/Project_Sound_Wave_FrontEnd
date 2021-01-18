@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SongService} from "../../../service/song/song.service";
 import {ISong} from "../../../model/song/ISong";
-import {ActivatedRoute, ParamMap} from "@angular/router";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {AuthService} from "../../../service/auth/auth.service";
 import {UserService} from "../../../service/user/user.service";
 import {User} from "../../../model/user";
@@ -15,30 +15,35 @@ export class MySongComponent implements OnInit {
 
   songs: ISong[] = [];
   // @ts-ignore
-  song: ISong ;
+  song: ISong;
   // @ts-ignore
   user: User;
   // @ts-ignore
   id: number;
+
   constructor(
     private songService: SongService,
     private activatedRoute: ActivatedRoute,
     private authService: AuthService,
-    private userService: UserService
-  ) { }
+    private userService: UserService,
+    private router: Router
+  ) {
+  }
 
   ngOnInit(): void {
     const userFromLocalStorage = this.authService.currentUserValue;
-     this.userService.getUserByUsername(userFromLocalStorage.username).subscribe(value => {
+    this.userService.getUserByUsername(userFromLocalStorage.username).subscribe(value => {
       this.user = value;
       // @ts-ignore
-       this.getMySongs(this.user.id);
+      this.getMySongs(this.user.id);
     })
   }
+
   // @ts-ignore
   getMySongs(id: number): ISong[] {
-    this.songService.getMySongs(id).subscribe(value => this.songs = value );
+    this.songService.getMySongs(id).subscribe(value => this.songs = value);
   }
+
   playThisSong(id: any) {
     this.songService.countViews(id).subscribe();
     this.songService.getSongById(id).subscribe(value => {
@@ -47,5 +52,11 @@ export class MySongComponent implements OnInit {
       // console.log(this.song);
       window.location.reload();
     });
+  }
+
+  deleteSong(id: any) {
+    if (confirm("Are you sure")) {
+      this.songService.deleteSong(id).subscribe(() => console.log('ok'));
+    }
   }
 }

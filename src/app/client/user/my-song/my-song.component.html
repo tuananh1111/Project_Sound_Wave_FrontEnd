@@ -10,6 +10,9 @@
         <td>
           <button class="btn btn-success" [routerLink]="['/songs/update/', song.id ]">update</button>
         </td>
+        <td>
+          <button class="btn-success" (click)="deleteSong(song.id)">delete</button>
+        </td>
       </tr>
     </table>
   </div>
