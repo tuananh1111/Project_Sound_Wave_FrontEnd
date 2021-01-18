@@ -40,6 +40,7 @@ export class MySongComponent implements OnInit {
     this.songService.getMySongs(id).subscribe(value => this.songs = value );
   }
   playThisSong(id: any) {
+    this.songService.countViews(id).subscribe();
     this.songService.getSongById(id).subscribe(value => {
       this.song = value;
       localStorage.setItem('songSelected', JSON.stringify(this.song));
