@@ -14,6 +14,8 @@ import {CreateNewSongComponent} from './component/song/create-new-song/create-ne
 import {RegisterComponent} from "./visiter/register/register.component";
 import {UpdateComponent} from "./component/song/update/update.component";
 import {MySongComponent} from "./client/user/my-song/my-song.component";
+import {ListPlaylistComponent} from './component/playlist/list-playlist/list-playlist.component';
+import {ListPlaylistHotComponent} from './component/playlist/list-playlist-hot/list-playlist-hot.component';
 
 const routes: Routes = [
   {
@@ -70,6 +72,10 @@ const routes: Routes = [
   {
     path: '',
     component: ListSongComponent
+  },
+  {
+    path: 'playlists/hot',
+    component: ListPlaylistHotComponent
   }
 ];
 
