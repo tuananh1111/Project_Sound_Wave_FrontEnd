@@ -1,0 +1,15 @@
+<div style="margin-left: 20%; padding-top: 150px; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white">
+  <div *ngFor="let song of songs">
+    <table>
+      <tr>
+        <td><img (click)="playThisSong(song.id)" src="{{song.avatar}}" alt="" style="width: 100px ; height: 100px; cursor: pointer"></td>
+        <td>
+          <h3>{{song.name}}</h3>
+          <h5>{{song.musician}}
+            day la my song</h5>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>
