@@ -17,8 +17,8 @@ import {AngularFireModule} from '@angular/fire';
 import {UpdateUserComponent} from './client/user/update-user/update-user.component';
 import {CreateNewSongComponent} from './component/song/create-new-song/create-new-song.component';
 import {ResetpasswordComponent} from './resetpassword/resetpassword.component';
-import {PlayComponent} from './play/play.component';
-import { MySongComponent } from './client/user/my-song/my-song.component';
+import {MySongComponent} from "./client/user/my-song/my-song.component";
+import {PlayComponent} from "./play/play.component";
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { MySongComponent } from './client/user/my-song/my-song.component';
     ResetpasswordComponent,
     UpdateUserComponent,
     PlayComponent,
-    MySongComponent
+    MySongComponent,
   ],
   imports: [
     BrowserModule,

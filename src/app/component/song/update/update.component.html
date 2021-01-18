@@ -1,68 +1,68 @@
 
 
-<!--<div class="container-fluid">-->
-<!--  <h1 align="center">update  song</h1>-->
-<!--  <div class="col-md-6 offset-md-3">-->
-<!--&lt;!&ndash;    <button class="btn btn-success" [routerLink]="'/'">songs list</button>&ndash;&gt;-->
-<!--    <form [formGroup]="songForm" (ngSubmit)="update()">-->
-<!--      <div class="form-group">-->
-<!--        <label>name</label>-->
-<!--        <input [value]="songCurrent.name" type="text" formControlName="name" class="form-control" id="exampleInputUsername" aria-describedby="emailHelp" placeholder="Enter name">-->
-<!--      </div>-->
-<!--      <div class="form-group">-->
-<!--        <label>description</label>-->
-<!--        <input [value]="songCurrent.description" type="text" formControlName="description" class="form-control"  placeholder="Desc">-->
-<!--      </div>-->
-<!--      <div class="form-group">-->
-<!--        <label>file nhac</label>-->
-<!--        <input  type="file"-->
-<!--                id="file"-->
-<!--                #userPhoto-->
-<!--                (change)="saveUrlMp3($event)"-->
-<!--                name="image"-->
-<!--                autocomplete="off"-->
-<!--        />-->
-<!--      </div>-->
-<!--      <div class="form-group">-->
-<!--        <label>file nhac</label>-->
-<!--        <input  type="file"-->
-<!--                id="fileAvatar"-->
-<!--                #userPhoto-->
-<!--                (change)="saveAvatar($event)"-->
-<!--                name="image"-->
-<!--                autocomplete="off"-->
-<!--        />-->
-<!--      </div>-->
-<!--      <div class="form-group">-->
-<!--        <label>singer</label>-->
-<!--        <select  class="form-control" formControlName="singer" >-->
-<!--          <option *ngFor="let s of singers" [value]="s.id">-->
-<!--            {{s.name}}-->
-<!--          </option>-->
-<!--        </select>-->
-<!--      </div>-->
-<!--      <div class="form-group">-->
-<!--        <label>category</label>-->
-<!--        <select  class="form-control" formControlName="category" >-->
-<!--          <option *ngFor="let c of categories" [value]="c.id">-->
-<!--            {{c.name}}-->
-<!--          </option>-->
-<!--        </select>-->
-<!--      </div>-->
-<!--      <div class="form-group">-->
-<!--        <label>album</label>-->
-<!--        <select class="form-control" formControlName="album" >-->
-<!--          <option *ngFor="let a of albums" [value]="a.id">-->
-<!--            {{a.name}}-->
-<!--          </option>-->
-<!--        </select>-->
-<!--      </div>-->
-<!--      <div class="form-group">-->
-<!--        <label>musician</label>-->
-<!--        <input [value]="songCurrent.musician" type="text" formControlName="musician" class="form-control" placeholder="Desc">-->
-<!--      </div>-->
-<!--      <button type="submit" class="btn btn-primary">Submit</button>-->
-<!--    </form>-->
-<!--  </div>-->
-<!--</div>-->
+<div class="container-fluid">
+  <h1 align="center">update  song</h1>
+  <div class="col-md-6 offset-md-3">
+<!--    <button class="btn btn-success" [routerLink]="'/'">songs list</button>-->
+    <form [formGroup]="songForm" (ngSubmit)="update()">
+      <div class="form-group">
+        <label>name</label>
+        <input [value]="songCurrent.name" type="text" formControlName="name" class="form-control" id="exampleInputUsername" aria-describedby="emailHelp" placeholder="Enter name">
+      </div>
+      <div class="form-group">
+        <label>description</label>
+        <input [value]="songCurrent.description" type="text" formControlName="description" class="form-control"  placeholder="Desc">
+      </div>
+      <div class="form-group">
+        <label>file nhac</label>
+        <input  type="file"
+                id="file"
+                #userPhoto
+                (change)="saveUrlMp3($event)"
+                name="image"
+                autocomplete="off"
+        />
+      </div>
+      <div class="form-group">
+        <label>file nhac</label>
+        <input  type="file"
+                id="fileAvatar"
+                #userPhoto
+                (change)="saveAvatar($event)"
+                name="image"
+                autocomplete="off"
+        />
+      </div>
+      <div class="form-group">
+        <label>singer</label>
+        <select  class="form-control" formControlName="singer" >
+          <option *ngFor="let s of singers" [value]="s.id">
+            {{s.name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>category</label>
+        <select  class="form-control" formControlName="category" >
+          <option *ngFor="let c of categories" [value]="c.id">
+            {{c.name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>album</label>
+        <select class="form-control" formControlName="album" >
+          <option *ngFor="let a of albums" [value]="a.id">
+            {{a.name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>musician</label>
+        <input [value]="songCurrent.musician" type="text" formControlName="musician" class="form-control" placeholder="Desc">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
 
