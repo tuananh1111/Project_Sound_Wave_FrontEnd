@@ -5,6 +5,7 @@ import {AuthService} from './service/auth/auth.service';
 import {Router} from '@angular/router';
 import {ISong} from './model/song/ISong';
 import {BehaviorSubject} from 'rxjs';
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -23,11 +24,15 @@ export class AppComponent {
 
   // @ts-ignore
   songCurrentObject: BehaviorSubject<ISong> = new BehaviorSubject<ISong>(JSON.parse(localStorage.getItem('songSelected')));
+  searchForm: FormGroup = this.fb.group({
+    name: new FormControl()
+  })
 
   constructor(
     private userService: UserService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private fb: FormBuilder
   ) {
   }
 
@@ -44,11 +49,10 @@ export class AppComponent {
     this.authService.logout();
     this.router.navigate(['']);
   }
-  // // @ts-ignore
-  // getSong(value: ISong) {
-  //   this.song = value;
-  //   console.log(this.song);
-  // }
+  searchSong() {
+      let name: string = this.searchForm.get('name')?.value;
+      this.router.navigate([`/songs/search/${name}`]);
+  }
 }
 
 

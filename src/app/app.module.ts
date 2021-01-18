@@ -20,6 +20,7 @@ import {ResetpasswordComponent} from './resetpassword/resetpassword.component';
 import {MySongComponent} from "./client/user/my-song/my-song.component";
 import {PlayComponent} from "./play/play.component";
 import {UpdateComponent} from "./component/song/update/update.component";
+import {SearchSongComponent} from "./component/song/search-song/search-song.component";
 
 @NgModule({
   declarations: [

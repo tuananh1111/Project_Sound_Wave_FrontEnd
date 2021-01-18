@@ -13,6 +13,7 @@ import {RegisterComponent} from "./visiter/register/register.component";
 import {UpdateComponent} from "./component/song/update/update.component";
 import {ListPlaylistHotComponent} from "./component/playlist/list-playlist-hot/list-playlist-hot.component";
 import {MySongComponent} from "./client/user/my-song/my-song.component";
+import {SearchSongComponent} from "./component/song/search-song/search-song.component";
 
 
 
@@ -54,10 +55,20 @@ const routes: Routes = [
     path: 'songs/update/:id',
     component: UpdateComponent
   },
+  {
+    path: 'songs/search/:name',
+    component: SearchSongComponent
+  },
 
   {
     path: 'songs',
     component: ListSongComponent,
+    children: [
+      {
+        path: 'search',
+        loadChildren: () => import('./component/song/song.module').then(module => module.SongModule)
+      }
+    ]
     // children: [
       // {
       //   path: 'my-songs/:id',

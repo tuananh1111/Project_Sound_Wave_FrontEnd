@@ -41,4 +41,7 @@ export class SongService {
   deleteSong(id: number): Observable<any> {
     return this.httpClient.delete<any>(URL_API + `/songs/${id}`);
   }
+  searchSong(name: string): Observable<any> {
+    return this.httpClient.post<ISong>(URL_API + `/songs/search/${name}`, name );
+  }
 }

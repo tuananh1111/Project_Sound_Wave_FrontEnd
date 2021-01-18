@@ -72,8 +72,8 @@
 <!--&lt;!&ndash;        <a class="btn badge-info" [routerLink]="['/profile', user.username]">{{user.username}}</a>&ndash;&gt;-->
 <!--      </li>-->
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <form [formGroup]="searchForm" (ngSubmit)="searchSong()" class="form-inline my-2 my-lg-0">
+      <input formControlName="name" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
