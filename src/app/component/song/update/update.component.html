@@ -15,7 +15,7 @@
       </div>
       <div class="form-group">
         <label>file nhac</label>
-        <input  type="file"
+        <input formControlName="urlMp3" [value]="songCurrent.urlMp3"  type="file"
                 id="file"
                 #userPhoto
                 (change)="saveUrlMp3($event)"
@@ -24,8 +24,8 @@
         />
       </div>
       <div class="form-group">
-        <label>file nhac</label>
-        <input  type="file"
+        <label>file avatar</label>
+        <input formControlName="avatar" [value]="songCurrent.avatar" type="file"
                 id="fileAvatar"
                 #userPhoto
                 (change)="saveAvatar($event)"

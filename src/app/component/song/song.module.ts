@@ -7,7 +7,7 @@ import {RouterModule} from "@angular/router";
 
 
 @NgModule({
-  declarations: [UpdateComponent],
+  declarations: [],
   imports: [
     CommonModule,
     ReactiveFormsModule,
