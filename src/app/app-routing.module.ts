@@ -8,6 +8,8 @@ import {CreateNewSongComponent} from './component/song/create-new-song/create-ne
 import {ListSongComponent} from './component/song/list-song/list-song.component';
 import {RegisterComponent} from './visiter/register/register.component';
 import {UpdateUserComponent} from './client/user/update-user/update-user.component';
+import {ListPlaylistComponent} from './component/playlist/list-playlist/list-playlist.component';
+import {ListPlaylistHotComponent} from './component/playlist/list-playlist-hot/list-playlist-hot.component';
 
 const routes: Routes = [
   {
@@ -39,6 +41,10 @@ const routes: Routes = [
   {
     path: 'songs',
     component: ListSongComponent
+  },
+  {
+    path: 'playlists/hot',
+    component: ListPlaylistHotComponent
   }
 ];
 

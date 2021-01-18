@@ -17,6 +17,7 @@ import {ResetpasswordComponent} from "./resetpassword/resetpassword.component";
 import {UpdateUserComponent} from "./client/user/update-user/update-user.component";
 import {CreateNewSongComponent} from "./component/song/create-new-song/create-new-song.component";
 import {ListSongComponent} from "./component/song/list-song/list-song.component";
+import { ListPlaylistHotComponent } from './component/playlist/list-playlist-hot/list-playlist-hot.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {ListSongComponent} from "./component/song/list-song/list-song.component"
     CreateNewSongComponent,
     ListSongComponent,
     ResetpasswordComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    ListPlaylistHotComponent
   ],
   imports: [
     BrowserModule,
