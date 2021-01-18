@@ -19,6 +19,7 @@ import {CreateNewSongComponent} from './component/song/create-new-song/create-ne
 import {ResetpasswordComponent} from './resetpassword/resetpassword.component';
 import {MySongComponent} from "./client/user/my-song/my-song.component";
 import {PlayComponent} from "./play/play.component";
+import {UpdateComponent} from "./component/song/update/update.component";
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {PlayComponent} from "./play/play.component";
     UpdateUserComponent,
     PlayComponent,
     MySongComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
