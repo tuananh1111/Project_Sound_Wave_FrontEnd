@@ -27,7 +27,7 @@ export class ListSongComponent implements OnInit {
   }
 
   playThisSong(id: any) {
-    this.songService.countViews(id).subscribe(() => console.log("ok"));
+    this.songService.countViews(id).subscribe(() => console.log('ok'));
     this.songService.getSongById(id).subscribe(value => {
       this.song = value;
       localStorage.setItem('songSelected', JSON.stringify(this.song));

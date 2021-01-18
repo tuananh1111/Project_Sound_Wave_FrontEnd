@@ -1,0 +1,11 @@
+<div>
+  <table>
+    <tr *ngFor="let list of playlists">
+      <td>Name playlist: {{list.name}}</td>
+      <br>
+      <td>Name song: {{list.songs[0].name}}</td>
+      <br>
+      <td>URL: {{list.songs[0].urlMp3}}</td>
+    </tr>
+  </table>
+</div>
