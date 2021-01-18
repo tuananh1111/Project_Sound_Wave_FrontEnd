@@ -30,10 +30,10 @@ export class SongService {
     return this.httpClient.post<ISong[]>(URL_API + `/songs/my-songs/`, id);
   }
   updateSong(song: ISong): Observable<any> {
-    return this.httpClient.put<ISong>(URL_API +  `songs/${song.id}`, song)
+    return this.httpClient.put<ISong>(URL_API +  `/songs/${song.id}`, song)
   }
   getSong(id: number): Observable<any> {
-    return this.httpClient.get<ISong>(URL_API + `songs/${id}`);
+    return this.httpClient.get<ISong>(URL_API + `/songs/${id}`);
   }
   countViews(id: number): Observable<any> {
     return this.httpClient.post<ISong>(URL_API + `/songs/count-views`, id);

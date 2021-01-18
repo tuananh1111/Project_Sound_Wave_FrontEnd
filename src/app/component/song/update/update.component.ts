@@ -15,6 +15,7 @@ import {CategoryService} from "../../../service/category/category.service";
 import {AlbumService} from "../../../service/album/album.service";
 import {finalize} from "rxjs/operators";
 import {User} from "../../../model/user";
+import {error} from "@angular/compiler/src/util";
 
 @Component({
   selector: 'app-update',
@@ -72,16 +73,23 @@ export class UpdateComponent implements OnInit {
     singer: new FormControl('', Validators.required),
     category:  new FormControl('', Validators.required),
     album: new FormControl('', Validators.required),
+    avatar: new FormControl(''),
+    urlMp3: new FormControl(''),
   });
   // tslint:disable-next-line:typedef
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
       // @ts-ignore
       this.id = param.get('id');
+      console.log(this.id);
       this.songService.getSong(this.id).subscribe(result => {
         this.songCurrent = result;
+        console.log(result);
         this.songForm.patchValue(this.songCurrent);
         console.log(this.songCurrent);
+      }, error => {
+        console.log("loi");
+        console.log(error);
       });
     });
   }
@@ -97,9 +105,11 @@ export class UpdateComponent implements OnInit {
       .pipe( finalize(() => {
           this.downloadURL = fileRef.getDownloadURL();
           this.downloadURL.subscribe(url => {
-            if (url) {
+            if (url != "") {
               this.fb = url;
               this.urlMp3 = url;
+            } else {
+              this.urlMp3 = this.songForm.get('urlMp3')?.value;
             }
             console.log(this.fb);
           });
@@ -123,9 +133,12 @@ export class UpdateComponent implements OnInit {
       .pipe( finalize(() => {
           this.downloadURL = fileRef.getDownloadURL();
           this.downloadURL.subscribe(url => {
-            if (url) {
+            if (url != "") {
               this.fb = url;
               this.avatar = url;
+            }
+            else {
+              this.avatar = this.songForm.get('avatar')?.value;
             }
             console.log(this.fb);
           });
@@ -142,14 +155,29 @@ export class UpdateComponent implements OnInit {
     const singer: ISinger = await this.getSinger();
     const category: ICategory = await this.getCategory();
     const album: IAlbum = await  this.getOneAlbum();
+    let newUrlMp3 : string;
+    let newAvatar : string;
+    if (this.urlMp3 != "") {
+      newUrlMp3 = this.urlMp3
+      console.log(newUrlMp3);
+    } else {
+      newUrlMp3 =  this.songForm.get('urlMp3')?.value;
+      console.log(newUrlMp3);
+    }
+    if (this.avatar != "") {
+      newAvatar = this.avatar
+      console.log(newAvatar);
+    } else {
+      newAvatar =  this.songForm.get('avatar')?.value;
+      console.log(newAvatar);
+    }
     const song: ISong = {
       id: this.songCurrent.id,
       name: this.songForm.get('name')?.value,
       description: this.songForm.get('description')?.value,
-      urlMp3: this.urlMp3,
-      avatar: this.avatar,
-      musician: this.songForm.get('description')?.value,
-      views: this.songForm.get('views')?.value,
+      urlMp3: newUrlMp3,
+      avatar: newAvatar,
+      musician: this.songForm.get('description')?.value
     };
     if (user != null){
       song.user = user;
