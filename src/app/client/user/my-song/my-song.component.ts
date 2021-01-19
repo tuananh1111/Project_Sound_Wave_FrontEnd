@@ -30,13 +30,11 @@ export class MySongComponent implements OnInit {
   ) {
   }
 
-  ngOnInit(): void {
-    const userFromLocalStorage = this.authService.currentUserValue;
-    this.userService.getUserByUsername(userFromLocalStorage.username).subscribe(value => {
-      this.user = value;
-      // @ts-ignore
-      this.getMySongs(this.user.id);
-    })
+  // @ts-ignore
+  async ngOnInit(): void {
+    const user: User = await this.getUserFromDB();
+    // @ts-ignore
+    this.getMySongs(user.id);
   }
 
   // @ts-ignore
@@ -58,5 +56,9 @@ export class MySongComponent implements OnInit {
     if (confirm("Are you sure")) {
       this.songService.deleteSong(id).subscribe(() => console.log('ok'));
     }
+  }
+  getUserFromDB() {
+    const userFromLocalStorage = this.authService.currentUserValue;
+    return this.userService.getUserByUsername(userFromLocalStorage.username).toPromise();
   }
 }

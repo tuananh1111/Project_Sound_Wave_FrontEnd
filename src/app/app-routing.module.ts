@@ -63,20 +63,10 @@ const routes: Routes = [
   {
     path: 'songs',
     component: ListSongComponent,
-    children: [
-      {
-        path: 'search',
-        loadChildren: () => import('./component/song/song.module').then(module => module.SongModule)
-      }
-    ]
     // children: [
-      // {
-      //   path: 'my-songs/:id',
-      //   component: MySongComponent
-      // },
     //   {
-    //     path: 'update/:id',
-    //     component: UpdateComponent
+    //     path: '',
+    //     loadChildren: () => import('./component/song/song.module').then(module => module.SongModule)
     //   }
     // ]
   },
