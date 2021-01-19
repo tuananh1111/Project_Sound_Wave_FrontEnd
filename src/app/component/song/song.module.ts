@@ -9,13 +9,12 @@ import {SongRoutingModule} from "./song-routing.module";
 
 
 @NgModule({
-  declarations: [SearchSongComponent],
+  declarations: [],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
-    FormsModule,
-    SongRoutingModule
+    FormsModule
   ]
 })
 export class SongModule { }

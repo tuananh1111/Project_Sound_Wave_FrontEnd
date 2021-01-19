@@ -34,7 +34,8 @@ import {SearchSongComponent} from "./component/song/search-song/search-song.comp
     UpdateUserComponent,
     PlayComponent,
     MySongComponent,
-    UpdateComponent
+    UpdateComponent,
+    SearchSongComponent
   ],
   imports: [
     BrowserModule,

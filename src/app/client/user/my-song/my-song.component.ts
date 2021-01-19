@@ -52,9 +52,15 @@ export class MySongComponent implements OnInit {
     });
   }
 
-  deleteSong(id: any) {
+  async deleteSong(id: any) {
     if (confirm("Are you sure")) {
-      this.songService.deleteSong(id).subscribe(() => console.log('ok'));
+      const user: User = await this.getUserFromDB();
+        this.songService.deleteSong(id).subscribe(() => {
+          // @ts-ignore
+          this.songService.getMySongs(user.id).subscribe(value => {
+            this.songs = value;
+          })
+        });
     }
   }
   getUserFromDB() {
